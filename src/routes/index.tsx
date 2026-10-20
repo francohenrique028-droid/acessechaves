@@ -70,11 +70,8 @@ const btnWa = `${btn} bg-whatsapp text-foreground hover:brightness-110`;
 
 function Logo() {
   return (
-    <a href="#inicio" className="flex items-center gap-2.5 font-extrabold tracking-tight">
-      <span className="grid h-9 w-9 place-items-center rounded-lg bg-gradient-brand text-primary-foreground">
-        <KeyRound className="h-5 w-5" />
-      </span>
-      <span>CHAVEIRO <span className="text-primary">JUNIOR</span></span>
+    <a href="#inicio" aria-label="Chaveiro Junior — início" className="flex shrink-0 items-center">
+      <img src="/chaveiro-junior-logo.svg" alt="Chaveiro Junior" width={160} height={57} className="h-auto w-[125px] object-contain sm:w-[150px]" />
     </a>
   );
 }
