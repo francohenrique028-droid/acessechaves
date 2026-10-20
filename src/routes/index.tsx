@@ -97,7 +97,7 @@ function Header() {
           {NAV.map((n) => (
             <a key={n.href} href={n.href} onClick={() => setOpen(false)} className="block border-b border-border py-3 text-muted-foreground">{n.label}</a>
           ))}
-          <a href={TEL} className={`${btnPrimary} mt-4 w-full`}><Phone className="h-4 w-4" />Ligar Agora</a>
+          
         </nav>
       )}
     </header>
