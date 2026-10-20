@@ -192,7 +192,6 @@ function PalavrasChaves() {
               backgroundImage: "linear-gradient(90deg, #4285F4, #EA4335, #FBBC05, #34A853, #4285F4)",
               backgroundSize: "250% 100%",
               animation: "google-colors-shift 3s linear infinite",
-              filter: "drop-shadow(1px 2px 0 rgba(0,0,0,.65)) drop-shadow(0 3px 4px rgba(66,133,244,.3))",
             }}
           >
             Google empresas otimizado
