@@ -189,7 +189,7 @@ function PalavrasChaves() {
           <span
             className="google-animated-text inline-block bg-clip-text text-sm font-bold tracking-tight text-transparent sm:text-base"
             style={{
-              backgroundImage: "linear-gradient(90deg, #4285F4, #EA4335, #FBBC05, #34A853, #4285F4)",
+              backgroundImage: "linear-gradient(90deg, #b4b4b4, #ffffff, #858585, #eeeeee, #b4b4b4)",
               backgroundSize: "250% 100%",
               animation: "google-colors-shift 3s linear infinite",
             }}
