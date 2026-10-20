@@ -60,3 +60,18 @@
   html { scroll-behavior: smooth; scroll-padding-top: 80px; }
   body { background-color: var(--color-background); color: var(--color-foreground); font-family: var(--font-sans); overflow-x: hidden; }
 }
+
+/* Destaque rápido dos botões de contato na versão mobile. */
+@media (max-width: 639px) {
+  @keyframes hero-contact-flash {
+    0%, 100% { filter: brightness(1); }
+    50% { filter: brightness(1.5); }
+  }
+  .hero-mobile-flash {
+    animation: hero-contact-flash 0.65s ease-in-out infinite;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-mobile-flash { animation: none; }
+}
