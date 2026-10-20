@@ -3,7 +3,7 @@ import { useState, type ReactNode } from "react";
 import logoAsset from "@/assets/chaveiro-junior-logo.png.asset.json";
 import {
   KeyRound, Phone, Menu, X, ShieldCheck, Award, Zap, Clock, DoorOpen, Key, Cpu, Wrench,
-  Car, Home, ArrowRight, Star, Quote, MessageCircle, Facebook, Instagram, Mail, MapPin,
+  Car, Home, ArrowRight, Star, MessageCircle, Facebook, Instagram, Mail, MapPin,
 } from "lucide-react";
 
 // ===== Configuração editável =====
@@ -195,31 +195,27 @@ function Services() {
   );
 }
 
-const TESTIMONIALS = [
-  { n: "Carlos Silva", r: "Empresário", t: "Serviço impecável! Precisei de atendimento de emergência às 2h da manhã e foram super rápidos. A chave do meu carro foi programada em menos de 30 minutos." },
-  { n: "Ana Rodrigues", r: "Arquiteta", t: "Excelente trabalho na troca de todas as fechaduras do meu apartamento. Profissionais muito educados e preço justo. Super recomendo!" },
-  { n: "Roberto Mendes", r: "Motorista de Aplicativo", t: "Já é a terceira vez que uso o serviço. Sempre confio neles para fazer as chaves reservas dos meus carros. Qualidade garantida." },
-];
+const GOOGLE_REVIEWS_URL = "https://www.google.com/maps/search/?api=1&query=Chaveiro+Junior+Chaves+codificadas+e+carimbos+Av+Oliveira+Paiva+1881+Fortaleza";
 
 function Testimonials() {
   return (
     <section id="sobre" className="bg-surface px-5 py-24">
       <div className="mx-auto max-w-6xl">
-        <SectionHead eyebrow="DEPOIMENTOS" title="O Que Nossos Clientes Dizem" sub="A satisfação dos nossos clientes é o que nos motiva a continuar oferecendo o melhor serviço." />
-        <div className="grid gap-6 md:grid-cols-3">
-          {TESTIMONIALS.map(({ n, r, t }) => (
-            <figure key={n} className="relative flex flex-col rounded-2xl border border-border bg-card p-7">
-              <Quote className="absolute right-6 top-6 h-8 w-8 text-primary/20" />
-              <div className="flex gap-1 text-primary">{Array.from({ length: 5 }).map((_, i) => <Star key={i} className="h-4 w-4 fill-current" />)}</div>
-              <blockquote className="mt-5 flex-1 text-muted-foreground">"{t}"</blockquote>
-              <figcaption className="mt-6 flex items-center gap-3">
-                <span className="grid h-11 w-11 place-items-center rounded-full bg-gradient-brand font-bold text-primary-foreground">{n.split(" ").map((w) => w[0]).join("")}</span>
-                <div><p className="font-semibold">{n}</p><p className="text-sm text-muted-foreground">{r}</p></div>
-              </figcaption>
-            </figure>
-          ))}
+        <SectionHead eyebrow="AVALIAÇÕES REAIS" title="O Que Nossos Clientes Dizem" sub="Veja as avaliações públicas do Chaveiro Junior no Google." />
+        <div className="mx-auto flex max-w-xl flex-col items-center rounded-2xl border border-border bg-card px-6 py-10 text-center">
+          <p className="text-sm font-semibold text-muted-foreground">Chaveiro Junior — Chaves codificadas e carimbos</p>
+          <div className="mt-5 flex items-center gap-3">
+            <strong className="text-5xl font-extrabold text-foreground">4,7</strong>
+            <div className="flex gap-1 text-primary" aria-label="Nota média de 4,7 de 5">
+              {Array.from({ length: 5 }).map((_, i) => <Star key={i} className={`h-5 w-5 ${i < 4 ? "fill-current" : ""}`} />)}
+            </div>
+          </div>
+          <p className="mt-2 text-sm text-muted-foreground">154 avaliações no Google</p>
+          <p className="mt-4 text-xs text-muted-foreground">Nota e quantidade consultadas em outubro de 2026; podem mudar.</p>
+          <a href={GOOGLE_REVIEWS_URL} target="_blank" rel="noopener noreferrer" className={`${btnPrimary} mt-7`}>
+            Ver avaliações reais no Google <ArrowRight className="h-4 w-4" />
+          </a>
         </div>
-        <p className="mt-8 text-center text-xs text-muted-foreground/70">Depoimentos demonstrativos — serão substituídos por avaliações reais.</p>
       </div>
     </section>
   );
