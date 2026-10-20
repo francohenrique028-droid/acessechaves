@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState, type ReactNode } from "react";
 import {
   KeyRound, Phone, Menu, X, ShieldCheck, Award, Zap, Clock, DoorOpen, Key, Cpu, Wrench,
-  Car, Home, ArrowRight, Star, Quote, MessageCircle, Facebook, Instagram, Mail, MapPin, ImageIcon,
+  Car, Home, ArrowRight, Star, Quote, MessageCircle, Facebook, Instagram, Mail, MapPin,
 } from "lucide-react";
 
 // ===== Configuração editável =====
@@ -58,7 +58,6 @@ export const Route = createFileRoute("/")({
 const NAV = [
   { href: "#inicio", label: "Início" },
   { href: "#servicos", label: "Serviços" },
-  { href: "#portfolio", label: "Portfólio" },
   { href: "#sobre", label: "Sobre Nós" },
   { href: "#orcamento", label: "Orçamento" },
 ];
@@ -188,36 +187,7 @@ function Services() {
           ))}
         </div>
         <div className="mt-12 text-center">
-          <a href="#portfolio" className={`${btn} border border-primary text-primary hover:bg-primary hover:text-primary-foreground`}>Ver Todos os Serviços <ArrowRight className="h-4 w-4" /></a>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-const CATS = ["Chaves Automotivas", "Programação de Chaves", "Abertura de Portas", "Reparos Eletrônicos"];
-
-function Portfolio() {
-  const [cat, setCat] = useState(CATS[0]);
-  return (
-    <section id="portfolio" className="border-t border-border px-5 py-24">
-      <div className="mx-auto max-w-6xl">
-        <SectionHead eyebrow="NOSSOS TRABALHOS" title="Conheça Nossos Serviços na Prática" />
-        <div className="mb-10 flex flex-wrap justify-center gap-2">
-          {CATS.map((c) => (
-            <button key={c} onClick={() => setCat(c)} className={`rounded-full border px-5 py-2 text-sm transition-colors ${cat === c ? "border-primary bg-primary text-primary-foreground" : "border-border text-muted-foreground hover:text-foreground"}`}>{c}</button>
-          ))}
-        </div>
-        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {[1, 2, 3].map((i) => (
-            <div key={i} className="grid aspect-[4/3] place-items-center rounded-2xl border border-dashed border-border bg-card text-center">
-              <div className="text-muted-foreground">
-                <ImageIcon className="mx-auto mb-3 h-8 w-8 text-primary/60" />
-                <p className="text-sm font-medium">{cat}</p>
-                <p className="text-xs">Espaço reservado para foto real</p>
-              </div>
-            </div>
-          ))}
+          <a href="#servicos" className={`${btn} border border-primary text-primary hover:bg-primary hover:text-primary-foreground`}>Ver Todos os Serviços <ArrowRight className="h-4 w-4" /></a>
         </div>
       </div>
     </section>
@@ -292,7 +262,7 @@ function Footer() {
         </div>
         <div>
           <h3 className={col}>Links Rápidos</h3>
-          <ul className="space-y-2">{NAV.filter((n) => n.href !== "#portfolio").map((n) => <li key={n.href}><a href={n.href} className={link}>{n.label}</a></li>)}</ul>
+          <ul className="space-y-2">{NAV.map((n) => <li key={n.href}><a href={n.href} className={link}>{n.label}</a></li>)}</ul>
         </div>
         <div>
           <h3 className={col}>Serviços</h3>
@@ -319,7 +289,6 @@ function Index() {
       <main>
         <Hero />
         <Services />
-        <Portfolio />
         <Testimonials />
         <CTA />
       </main>
