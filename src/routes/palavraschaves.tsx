@@ -3,11 +3,11 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 const regions = [
   {
     title: "Bairros próximos à loja",
-    items: ["Cidade dos Funcionários", "Parque Manibura", "Cambeba", "Parque Iracema", "Jardim das Oliveiras", "Cajazeiras", "Engenheiro Luciano Cavalcante", "José de Alencar", "Edson Queiroz", "Sapiranga / Coité", "Messejana", "Lagoa Redonda"],
+    items: ["Cidade dos Funcionários","Parque Manibura","Cambeba","Parque Iracema","Jardim das Oliveiras","Cajazeiras","Engenheiro Luciano Cavalcante","José de Alencar","Edson Queiroz","Sapiranga / Coité","Messejana","Lagoa Redonda","Guajerú","Coaçu","Curió","Paupina","São Bento","Salinas","Sabiaguaba","Aerolândia","Alto da Balança","Passaré","Boa Vista"],
   },
   {
     title: "Outros bairros de Fortaleza",
-    items: ["Aerolândia", "Alto da Balança", "Dias Macedo", "Boa Vista", "Passaré", "Parque Dois Irmãos", "Barroso", "Curió", "Guajerú", "Coaçu", "Paupina", "São Bento", "Sabiaguaba", "Jangurussu", "Pedras", "Ancuri", "Parque Santa Maria", "Cocó", "Guararapes", "Salinas", "Fátima", "Dionísio Torres", "Aldeota", "Meireles", "Papicu", "Centro", "Parangaba", "Montese", "Maraponga", "Mondubim"],
+    items: ["Dias Macedo","Parque Dois Irmãos","Barroso","Jangurussu","Pedras","Ancuri","Parque Santa Maria","Cocó","Guararapes","Fátima","Dionísio Torres","Aldeota","Meireles","Papicu","Centro","Parangaba","Montese","Maraponga","Mondubim"],
   },
   {
     title: "Cidades próximas e região metropolitana",
