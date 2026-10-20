@@ -185,6 +185,20 @@ function PalavrasChaves() {
           />
         </h1>
         <p className="mt-5 max-w-3xl text-muted-foreground">Lista de localidades e termos para planejamento de campanhas e conteúdo. Os municípios e bairros abaixo estão confirmados na segmentação/SEO.</p>
+        <div className="mt-4 mb-3">
+          <span
+            className="google-animated-text inline-block bg-clip-text text-lg font-extrabold tracking-tight text-transparent sm:text-xl"
+            style={{
+              backgroundImage: "linear-gradient(90deg, #4285F4, #EA4335, #FBBC05, #34A853, #4285F4)",
+              backgroundSize: "250% 100%",
+              animation: "google-colors-shift 3s linear infinite",
+              filter: "drop-shadow(1px 2px 0 rgba(0,0,0,.65)) drop-shadow(0 3px 4px rgba(66,133,244,.3))",
+            }}
+          >
+            Google empresas otimizado
+          </span>
+        </div>
+        <style>{`@keyframes google-colors-shift { from { background-position: 0% 50%; } to { background-position: 100% 50%; } } @media (prefers-reduced-motion: reduce) { .google-animated-text { animation: none !important; } }`}</style>
         <section className="mt-12 grid gap-6 lg:grid-cols-2">
           {regions.map((region) => (
             <article key={region.title} className="rounded-2xl border border-border bg-card p-6 sm:p-8">
