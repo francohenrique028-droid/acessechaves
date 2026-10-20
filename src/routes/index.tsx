@@ -134,9 +134,9 @@ function Hero() {
           Soluções profissionais em chaveiro automotivo e residencial. Tecnologia e experiência para sua tranquilidade.
         </p>
         <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
-          <a href={WA_LINK} className={btnPrimary}>Solicitar Orçamento</a>
-          <a href={TEL} className={btnOutline}><Phone className="h-4 w-4" />Ligar Agora</a>
-          <a href={WA_LINK} target={WHATSAPP_NUMBER ? "_blank" : undefined} rel="noopener" className={btnWa}><MessageCircle className="h-4 w-4" />WhatsApp</a>
+          <a href={WA_LINK} className={`${btnPrimary} hidden sm:inline-flex`}>Solicitar Orçamento</a>
+          <a href={TEL} className={`${btnOutline} hero-mobile-flash`}><Phone className="h-4 w-4" />Ligar Agora</a>
+          <a href={WA_LINK} target={WHATSAPP_NUMBER ? "_blank" : undefined} rel="noopener" className={`${btnWa} hero-mobile-flash`}><MessageCircle className="h-4 w-4" />WhatsApp</a>
         </div>
         <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-3">
           {[
