@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, type ReactNode } from "react";
+import logoAsset from "@/assets/chaveiro-junior-logo.png.asset.json";
 import {
   KeyRound, Phone, Menu, X, ShieldCheck, Award, Zap, Clock, DoorOpen, Key, Cpu, Wrench,
   Car, Home, ArrowRight, Star, Quote, MessageCircle, Facebook, Instagram, Mail, MapPin,
@@ -70,7 +71,7 @@ const btnWa = `${btn} bg-whatsapp text-foreground hover:brightness-110`;
 function Logo() {
   return (
     <a href="#inicio" aria-label="Chaveiro Junior — início" className="flex shrink-0 items-center">
-      <img src="/chaveiro-junior-logo.svg" alt="Chaveiro Junior" width={160} height={57} className="h-auto w-[125px] object-contain sm:w-[150px]" />
+      <img src={logoAsset.url} alt="Chaveiro Junior" width={698} height={260} className="h-auto w-[135px] object-contain sm:w-[160px]" />
     </a>
   );
 }
