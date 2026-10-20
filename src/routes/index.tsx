@@ -135,15 +135,15 @@ function Hero() {
           <a href={TEL} className={`${btnOutline} hero-mobile-flash`}><Phone className="h-4 w-4" />Ligar Agora</a>
           <a href={WA_LINK} target={WHATSAPP_NUMBER ? "_blank" : undefined} rel="noopener" className={`${btnWa} hero-mobile-flash`}><MessageCircle className="h-4 w-4" />WhatsApp</a>
         </div>
-        <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-3">
+        <div className="mx-auto mt-12 grid max-w-[360px] grid-cols-2 justify-items-center gap-x-3 gap-y-5 sm:mt-14 sm:max-w-none sm:grid-cols-3 sm:gap-6">
           {[
-            { icon: Award, a: "+15 Anos", b: "de Experiência" },
-            { icon: Zap, a: "Atendimento", b: "Ágil" },
-            { icon: Clock, a: "Atendimento", b: "Rápido" },
+            { icon: ShieldCheck, a: "+15 Anos", b: "de Experiência" },
+            { icon: Clock, a: "Atendimento", b: "Ágil" },
+            { icon: Phone, a: "Atendimento", b: "Rápido" },
           ].map(({ icon: I, a, b }, i) => (
-            <div key={i} className="flex items-center justify-center gap-3">
-              <span className="grid h-11 w-11 place-items-center rounded-xl border border-border bg-card text-primary"><I className="h-5 w-5" /></span>
-              <div className="text-left leading-tight"><p className="font-bold">{a}</p><p className="text-sm text-muted-foreground">{b}</p></div>
+            <div key={i} className={`flex items-center justify-center gap-2.5 ${i === 2 ? "col-span-2 sm:col-span-1" : ""}`}>
+              <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-surface text-primary"><I className="h-5 w-5" /></span>
+              <div className="text-left leading-tight"><p className="text-sm font-bold">{a}</p><p className="text-xs text-muted-foreground">{b}</p></div>
             </div>
           ))}
         </div>
