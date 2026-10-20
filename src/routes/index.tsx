@@ -124,9 +124,6 @@ function Hero() {
         ))}
       </div>
       <div className="relative mx-auto max-w-4xl text-center animate-in fade-in slide-in-from-bottom-4 duration-700">
-        <span className="inline-flex items-center gap-2 rounded-full border border-whatsapp/30 bg-whatsapp/10 px-4 py-1.5 text-xs font-medium text-whatsapp">
-          <ShieldCheck className="h-3.5 w-3.5" />Serviço Profissional
-        </span>
         <h1 className="mt-8 text-5xl font-extrabold leading-[1.05] tracking-tight sm:text-7xl lg:text-8xl">
           Chaves & <span className="text-gradient-brand">Segurança</span>
         </h1>
