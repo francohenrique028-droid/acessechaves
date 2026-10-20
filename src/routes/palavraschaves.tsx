@@ -176,7 +176,13 @@ function PalavrasChaves() {
       <div className="mx-auto max-w-6xl">
         <Link to="/" className="text-sm font-semibold text-primary hover:underline">← Voltar ao Chaveiro Junior</Link>
         <p className="mt-12 text-xs font-semibold uppercase tracking-[0.2em] text-primary">Planejamento de palavras-chave</p>
-        <h1 className="mt-3 text-3xl font-extrabold tracking-tight sm:text-5xl">Bairros, cidades e serviços de chaveiro</h1>
+        <h1 className="mt-3 flex flex-wrap items-center gap-3 text-3xl font-extrabold tracking-tight sm:gap-4 sm:text-5xl">
+          <svg aria-label="Ícone de verificação azul" role="img" viewBox="0 0 500 500" className="h-10 w-10 shrink-0 sm:h-14 sm:w-14">
+            <path fill="#3EA6F0" d="M250 4c42 0 69 23 80 55 31-24 66-18 95 9 29 27 35 64 14 96 35 7 57 37 57 78 0 40-21 69-53 81 20 33 15 70-14 99-29 28-65 35-98 15-12 37-39 59-81 59s-70-22-81-59c-32 20-69 13-97-15-29-29-35-66-15-99C21 311 4 281 4 242c0-40 21-71 57-78-21-32-15-69 13-96 29-27 65-33 96-9C181 27 207 4 250 4Z" />
+            <path fill="#fff" d="m208 353-99-99 43-43 56 56 117-117 47 47Z" />
+          </svg>
+          <span>Bairros, cidades e serviços de chaveiro</span>
+        </h1>
         <p className="mt-5 max-w-3xl text-muted-foreground">Lista de localidades e termos para planejamento de campanhas e conteúdo. Os municípios e bairros abaixo estão confirmados na segmentação/SEO.</p>
         <section className="mt-12 grid gap-6 lg:grid-cols-2">
           {regions.map((region) => (
