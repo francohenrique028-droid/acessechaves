@@ -187,7 +187,7 @@ function PalavrasChaves() {
         <p className="mt-5 max-w-3xl text-muted-foreground">Lista de localidades e termos para planejamento de campanhas e conteúdo. Os municípios e bairros abaixo estão confirmados na segmentação/SEO.</p>
         <div className="mt-4 mb-3">
           <span
-            className="google-animated-text inline-block bg-clip-text text-lg font-extrabold tracking-tight text-transparent sm:text-xl"
+            className="google-animated-text inline-block bg-clip-text text-sm font-bold tracking-tight text-transparent sm:text-base"
             style={{
               backgroundImage: "linear-gradient(90deg, #4285F4, #EA4335, #FBBC05, #34A853, #4285F4)",
               backgroundSize: "250% 100%",
