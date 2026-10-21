@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { MapPin, KeyRound, Car, Wrench, MessageCircle, ArrowLeft, Clock, Search } from "lucide-react";
+import { KeyRound, Car, Wrench, Search } from "lucide-react";
 
 const PHONE = "558788248370";
 const WA = "https://wa.me/" + PHONE + "?text=" + encodeURIComponent("Olá! Encontrei o Rei das Chaves pelo Google e gostaria de consultar um serviço de chaveiro em Petrolina.");
@@ -52,56 +52,53 @@ export const Route = createFileRoute("/palavraschaves")({
   }),
   component: KeywordsPage,
 });
+const nearbyCities = ["Juazeiro-BA", "Lagoa Grande-PE", "Casa Nova-BA", "Sobradinho-BA", "Santa Maria da Boa Vista-PE"];
+const allTerms = categories.flatMap(category => category.terms);
+const pill = "rounded-full border border-border bg-surface px-3 py-2 text-sm text-foreground";
 function KeywordsPage() {
-  return <main className="min-h-screen bg-background px-5 py-14 text-foreground">
-    <div className="mx-auto max-w-6xl">
-      <Link to="/" className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline"><ArrowLeft className="h-4 w-4" /> Voltar ao Rei das Chaves</Link>
-      <header className="mt-12 max-w-4xl">
-        <p className="text-xs font-bold uppercase tracking-[0.2em] text-primary">Rei das Chaves • Petrolina-PE</p>
-        <p className="mt-3 inline-flex items-center rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">Guia de bairros e serviços atualizado • Outubro de 2026</p>
-        <h1 className="mt-4 text-3xl font-extrabold leading-tight tracking-tight sm:text-5xl">Chaveiro em Petrolina-PE: <span className="text-primary">serviços, bairros e regiões</span></h1>
-        <p className="mt-5 text-lg text-muted-foreground">Desde 1973, o Rei das Chaves oferece serviços de chaveiro em Petrolina, com loja na Rua Coronel Amorim, 106, Loja 09, no Centro. Conheça nossas especialidades e consulte atendimento pelo WhatsApp.</p>
-        <div className="mt-7 flex flex-wrap gap-3">
-          <a href={WA} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 font-semibold text-primary-foreground"><MessageCircle className="h-5 w-5" /> Consultar pelo WhatsApp</a>
-          <a href="https://maps.google.com/?q=Rua+Coronel+Amorim+106+Petrolina" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-6 py-3 font-semibold"><MapPin className="h-5 w-5" /> Ver localização</a>
+  return (
+    <main className="min-h-screen bg-background px-5 py-16 text-foreground">
+      <div className="mx-auto max-w-6xl">
+        <Link to="/" className="text-sm font-semibold text-primary hover:underline">← Voltar ao Rei das Chaves</Link>
+        <p className="mt-12 text-xs font-semibold uppercase tracking-[0.2em] text-primary">Planejamento de palavras-chave</p>
+        <h1 className="mt-3 text-3xl font-extrabold tracking-tight sm:text-5xl">Bairros, cidades e serviços de chaveiro</h1>
+        <p className="mt-5 max-w-3xl text-muted-foreground">Lista de localidades e termos para planejamento de campanhas e conteúdo. Os bairros abaixo são referências de pesquisa em Petrolina-PE; atendimento externo e disponibilidade devem ser confirmados com a empresa.</p>
+        <div className="mb-3 mt-4 flex items-center gap-1.5">
+          <span className="google-animated-text bg-clip-text text-sm font-bold tracking-tight text-transparent sm:text-base" style={{
+            backgroundImage: "linear-gradient(90deg, #b4b4b4, #ffffff, #858585, #eeeeee, #b4b4b4)",
+            backgroundSize: "250% 100%",
+            animation: "google-colors-shift 3s linear infinite"
+          }}>Google empresas otimizado</span>
+          <img src="https://i.imgur.com/t3s7ytw.gif" alt="Ícone animado de verificação" className="h-4 w-4 object-contain sm:h-[18px] sm:w-[18px]" />
         </div>
-      </header>
-      <section className="mt-16" aria-labelledby="areas-title">
-        <h2 id="areas-title" className="text-2xl font-extrabold sm:text-3xl">Bairros e localidades de Petrolina</h2>
-        <p className="mt-3 max-w-3xl text-muted-foreground">Nossa loja está localizada no Centro. A lista reúne bairros reais da cidade para orientar sua busca. <strong>A presença nesta lista não garante atendimento externo no bairro</strong>; confirme disponibilidade e deslocamento pelo WhatsApp.</p>
-        <div className="mt-7 grid gap-5 md:grid-cols-2">
-          {groups.map(group => <article key={group.title} className="rounded-2xl border border-border bg-card p-6">
-            <h3 className="flex items-center gap-2 text-lg font-bold"><MapPin className="h-5 w-5 text-primary" />{group.title}</h3>
-            <div className="mt-5 flex flex-wrap gap-2">{group.items.map(place => <span key={place} className="rounded-full border border-border bg-surface px-3 py-2 text-sm">{place}</span>)}</div>
-          </article>)}
-        </div>
-      </section>
-      <section className="mt-16" aria-labelledby="services-title">
-        <h2 id="services-title" className="text-2xl font-extrabold sm:text-3xl">Serviços e palavras-chave de chaveiro</h2>
-        <p className="mt-3 text-muted-foreground">Veja os principais serviços e expressões pesquisadas em Petrolina. A execução de cada serviço depende de avaliação e disponibilidade.</p>
-        <div className="mt-7 grid gap-5 md:grid-cols-2">
-          {categories.map(cat => <article key={cat.title} className="rounded-2xl border border-border bg-card p-6">
-            <h3 className="flex items-center gap-3 text-lg font-bold"><cat.icon className="h-6 w-6 text-primary" />{cat.title}</h3>
-            <p className="mt-2 text-sm text-muted-foreground">{cat.description}</p>
-            <ul className="mt-5 flex flex-wrap gap-2">{cat.terms.map(term => <li key={term} className="rounded-full border border-border bg-surface px-3 py-2 text-sm">{term}</li>)}</ul>
-          </article>)}
-        </div>
-      </section>
-      <section className="mt-16 rounded-2xl border border-border bg-card p-6 sm:p-8">
-        <h2 className="text-2xl font-extrabold">Combinações locais para pesquisas em Petrolina</h2>
-        <p className="mt-3 text-sm text-muted-foreground">Exemplos de pesquisas por bairro e serviço. São referências de busca, não afirmações de que temos unidades ou atendimento disponível em cada local.</p>
-        <div className="mt-6 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">{localExamples.map(term => <p key={term} className="rounded-lg bg-surface px-3 py-2 text-sm">{term}</p>)}</div>
-      </section>
-      <section className="mt-16 max-w-4xl">
-        <h2 className="text-2xl font-extrabold sm:text-3xl">Dúvidas frequentes</h2>
-        <div className="mt-6 space-y-4">{faqs.map(f => <article key={f.q} className="rounded-xl border border-border bg-card p-5"><h3 className="font-bold">{f.q}</h3><p className="mt-2 text-sm text-muted-foreground">{f.a}</p></article>)}</div>
-      </section>
-      <section className="mt-14 rounded-2xl border border-primary/30 bg-card p-7 text-center">
-        <Clock className="mx-auto h-8 w-8 text-primary" />
-        <h2 className="mt-3 text-2xl font-extrabold">Precisa de um chaveiro em Petrolina?</h2>
-        <p className="mx-auto mt-3 max-w-xl text-muted-foreground">Visite o Rei das Chaves no Centro, Rua Coronel Amorim, 106, Loja 09. Horário informado: 8h às 18h. Para dúvidas sobre serviços e atendimento externo, fale com nossa equipe.</p>
-        <a href={WA} target="_blank" rel="noopener noreferrer" className="mt-6 inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3 font-bold text-primary-foreground"><MessageCircle className="h-5 w-5" /> Chamar no WhatsApp</a>
-      </section>
-    </div>
-  </main>;
+        <style>{`@keyframes google-colors-shift { from { background-position: 0% 50%; } to { background-position: 100% 50%; } } @media (prefers-reduced-motion: reduce) { .google-animated-text { animation: none !important; } }`}</style>
+        <section className="mt-12 grid gap-6 lg:grid-cols-2" aria-label="Bairros, cidades e palavras-chave">
+          <article className="rounded-2xl border border-border bg-card p-6 sm:p-8">
+            <h2 className="text-xl font-bold">Bairros próximos à loja</h2>
+            <div className="mt-5 flex flex-wrap gap-2">{groups[0].items.map(item => <span className={pill} key={item}>{item}</span>)}</div>
+          </article>
+          <article className="rounded-2xl border border-border bg-card p-6 sm:p-8">
+            <h2 className="text-xl font-bold">Outros bairros de Petrolina</h2>
+            <div className="mt-5 flex flex-wrap gap-2">{groups.slice(1).flatMap(group => group.items).map(item => <span className={pill} key={item}>{item}</span>)}</div>
+          </article>
+          <article className="rounded-2xl border border-border bg-card p-6 sm:p-8">
+            <h2 className="text-xl font-bold">Cidades próximas e região</h2>
+            <p className="mt-2 text-sm text-muted-foreground">Localidades de referência geográfica. Consulte a empresa sobre atendimento fora de Petrolina.</p>
+            <div className="mt-5 flex flex-wrap gap-2">{nearbyCities.map(item => <span className={pill} key={item}>{item}</span>)}</div>
+          </article>
+          <article className="rounded-2xl border border-border bg-card p-6 sm:p-8">
+            <h2 className="text-xl font-bold">Serviços e termos de pesquisa</h2>
+            <div className="mt-5 flex flex-wrap gap-2">{allTerms.map(item => <span className={pill} key={item}>{item}</span>)}</div>
+          </article>
+        </section>
+        <section className="mt-8 rounded-2xl border border-border bg-card p-6 sm:p-8">
+          <h2 className="text-xl font-bold">Combinações locais de palavras-chave</h2>
+          <p className="mt-2 text-sm text-muted-foreground">Exemplos de termos pesquisados por bairro e serviço. Esta lista não indica unidades ou cobertura garantida em cada local.</p>
+          <ul className="mt-5 grid gap-2 text-sm text-foreground sm:grid-cols-2">
+            {localExamples.map(keyword => <li className="rounded-lg bg-surface px-3 py-2" key={keyword}>{keyword}</li>)}
+          </ul>
+        </section>
+      </div>
+    </main>
+  );
 }
