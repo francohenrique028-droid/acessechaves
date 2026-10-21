@@ -177,12 +177,7 @@ function PalavrasChaves() {
         <Link to="/" className="text-sm font-semibold text-primary hover:underline">← Voltar ao Chaveiro Junior</Link>
         <p className="mt-12 text-xs font-semibold uppercase tracking-[0.2em] text-primary">Planejamento de palavras-chave</p>
         <h1 className="mt-3 text-3xl font-extrabold tracking-tight sm:text-5xl">
-          Bairros, cidades e serviços de chaveiro{" "}
-          <img
-            src="https://i.imgur.com/t3s7ytw.gif"
-            alt="Selo azul de verificação animado"
-            className="inline-block h-[0.9em] w-[0.9em] align-[-0.12em] object-contain"
-          />
+          Bairros, cidades e serviços de chaveiro
         </h1>
         <p className="mt-5 max-w-3xl text-muted-foreground">Lista de localidades e termos para planejamento de campanhas e conteúdo. Os municípios e bairros abaixo estão confirmados na segmentação/SEO.</p>
         <div className="mt-4 mb-3">
@@ -196,6 +191,7 @@ function PalavrasChaves() {
           >
             Google empresas otimizado
           </span>
+          <img src="https://i.imgur.com/t3s7ytw.gif" alt="Selo azul de verificação animado" className="ml-1.5 inline-block h-4 w-4 align-[-0.15em] object-contain sm:h-[18px] sm:w-[18px]" />
         </div>
         <style>{`@keyframes google-colors-shift { from { background-position: 0% 50%; } to { background-position: 100% 50%; } } @media (prefers-reduced-motion: reduce) { .google-animated-text { animation: none !important; } }`}</style>
         <section className="mt-12 grid gap-6 lg:grid-cols-2">
