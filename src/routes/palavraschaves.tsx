@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { KeyRound, Car, Wrench, Search } from "lucide-react";
 
-const PHONE = "558788248370";
+const PHONE = "558587590223";
 const WA = "https://wa.me/" + PHONE + "?text=" + encodeURIComponent("Olá! Encontrei o Rei das Chaves pelo Google e gostaria de consultar um serviço de chaveiro em Petrolina.");
 const groups = [
   { title: "Centro e bairros próximos", items: ["Centro", "Gercino Coelho", "São José", "Maria Auxiliadora", "Atrás da Banca", "Vila Mocó", "Vila Eduardo", "Caminho do Sol", "Palhinhas", "Vila Débora"] },
@@ -49,7 +49,7 @@ export const Route = createFileRoute("/palavraschaves")({
       "@context": "https://schema.org",
       "@graph": [
         { "@type": "WebPage", "@id": "https://reidaschaves.lovable.app/palavraschaves#webpage", url: "https://reidaschaves.lovable.app/palavraschaves", name: "Chaveiro em Petrolina-PE | Bairros e Serviços", description: "Serviços de chaveiro e regiões de referência em Petrolina, PE", inLanguage: "pt-BR", about: { "@id": "https://reidaschaves.lovable.app/#business" } },
-        { "@type": "Locksmith", "@id": "https://reidaschaves.lovable.app/#business", name: "Rei das Chaves", url: "https://reidaschaves.lovable.app/", telephone: "+558788248370", foundingDate: "1973", address: { "@type": "PostalAddress", streetAddress: "Rua Coronel Amorim, 106, Loja 09", addressLocality: "Petrolina", addressRegion: "PE", addressCountry: "BR" }, areaServed: { "@type": "City", name: "Petrolina" } },
+        { "@type": "Locksmith", "@id": "https://reidaschaves.lovable.app/#business", name: "Rei das Chaves", url: "https://reidaschaves.lovable.app/", telephone: "+558587590223", foundingDate: "1973", address: { "@type": "PostalAddress", streetAddress: "Rua Coronel Amorim, 106, Loja 09", addressLocality: "Petrolina", addressRegion: "PE", addressCountry: "BR" }, areaServed: { "@type": "City", name: "Petrolina" } },
         { "@type": "FAQPage", mainEntity: faqs.map(f => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) },
         { "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Início", item: "https://reidaschaves.lovable.app/" }, { "@type": "ListItem", position: 2, name: "Bairros e Serviços", item: "https://reidaschaves.lovable.app/palavraschaves" }] },
       ],
