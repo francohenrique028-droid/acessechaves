@@ -78,14 +78,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Chaveiro Junior" },
-      { name: "description", content: "Chaveiro automotivo e residencial" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Chaveiro Junior" },
-      { property: "og:description", content: "Chaveiro automotivo e residencial" },
+      { title: "BVA Chaveiro em Valinhos-SP" },
+      { name: "description", content: "Chaveiro automotivo e residencial em Valinhos-SP" },
+      { name: "author", content: "BVA Chaveiro" },
+      { property: "og:title", content: "BVA Chaveiro em Valinhos-SP" },
+      { property: "og:description", content: "Chaveiro automotivo e residencial em Valinhos-SP" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
       {
