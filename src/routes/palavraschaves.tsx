@@ -1,26 +1,17 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 
 const regions = [
-  {
-    title: "Bairros próximos à loja",
-    items: ["Cidade dos Funcionários","Parque Manibura","Cambeba","Parque Iracema","Jardim das Oliveiras","Cajazeiras","Engenheiro Luciano Cavalcante","José de Alencar","Edson Queiroz","Sapiranga / Coité","Messejana","Lagoa Redonda","Guajerú","Coaçu","Curió","Paupina","São Bento","Salinas","Sabiaguaba","Aerolândia","Alto da Balança","Passaré","Boa Vista"],
-  },
-  {
-    title: "Outros bairros de Fortaleza",
-    items: ["Dias Macedo","Parque Dois Irmãos","Barroso","Jangurussu","Pedras","Ancuri","Parque Santa Maria","Cocó","Guararapes","Fátima","Dionísio Torres","Aldeota","Meireles","Papicu","Centro","Parangaba","Montese","Maraponga","Mondubim"],
-  },
-  {
-    title: "Cidades próximas e região metropolitana",
-    items: ["Eusébio", "Aquiraz", "Itaitinga", "Maracanaú", "Pacatuba", "Maranguape", "Caucaia"],
-  },
+  { title: "Bairros de Valinhos", items: ["Centro", "Vila Santana", "Vila Embaré", "Vila Olivo", "Jardim São Marcos", "Jardim Pinheiros", "Jardim América II", "Parque das Colinas", "Jardim Nova Palmares", "Jardim Imperial", "Jardim Paiquerê", "Jardim dos Manacás"] },
+  { title: "Outras regiões de Valinhos", items: ["Jardim Santo Antônio", "Jardim São Pedro", "Jardim Primavera", "Vila Faustina", "Jardim Alto da Boa Vista", "Parque Portugal", "Jardim Jurema", "Jardim Centenário"] },
+  { title: "Cidades próximas (sob consulta)", items: ["Vinhedo", "Louveira", "Campinas"] },
 ];
 
 const services = [
   "Chaveiro automotivo",
   "Chaveiro residencial",
   "Chaveiro comercial",
-  "Chaveiro em Fortaleza",
-  "Chaveiro Fortaleza CE",
+  "Chaveiro em Valinhos",
+  "Chaveiro Valinhos SP",
   "Chaveiro perto de mim",
   "Chaveiro próximo",
   "Chaveiro aberto agora",
@@ -154,16 +145,16 @@ const services = [
   "Orçamento de chaveiro",
   "Telefone de chaveiro",
   "Contato de chaveiro",
-  "Chaveiro na Cidade dos Funcionários",
-  "Chaveiro na Oliveira Paiva",
-  "Chaveiro na região de Messejana",
+  "Chaveiro no Centro de Valinhos",
+  "Chaveiro na Vila Olivo",
+  "Chaveiro em Vinhedo",
 ];
 
 export const Route = createFileRoute("/palavraschaves")({
   head: () => ({
     meta: [
-      { title: "Palavras-chave e regiões | Chaveiro Junior" },
-      { name: "description", content: "Referência de palavras-chave para chaveiro automotivo e residencial em bairros de Fortaleza e municípios próximos." },
+      { title: "Palavras-chave e regiões | BVA Chaveiro Valinhos" },
+      { name: "description", content: "Referência de palavras-chave para chaveiro automotivo e residencial em bairros de Valinhos e municípios próximos." },
       { name: "robots", content: "noindex, nofollow" },
     ],
   }),
@@ -174,12 +165,12 @@ function PalavrasChaves() {
   return (
     <main className="min-h-screen bg-background px-5 py-16 text-foreground">
       <div className="mx-auto max-w-6xl">
-        <Link to="/" className="text-sm font-semibold text-primary hover:underline">← Voltar ao Chaveiro Junior</Link>
+        <Link to="/" className="text-sm font-semibold text-primary hover:underline">← Voltar ao BVA Chaveiro</Link>
         <p className="mt-12 text-xs font-semibold uppercase tracking-[0.2em] text-primary">Planejamento de palavras-chave</p>
         <h1 className="mt-3 text-3xl font-extrabold tracking-tight sm:text-5xl">
           Bairros, cidades e serviços de chaveiro
         </h1>
-        <p className="mt-5 max-w-3xl text-muted-foreground">Lista de localidades e termos para planejamento de campanhas e conteúdo. Os municípios e bairros abaixo estão confirmados na segmentação/SEO.</p>
+        <p className="mt-5 max-w-3xl text-muted-foreground">Lista de localidades e termos para planejamento de campanhas e conteúdo. Termos para planejamento de SEO local. A prestação de serviços em cada localidade deve ser confirmada com a empresa.</p>
         <div className="mt-4 mb-3">
           <span
             className="google-animated-text inline-block bg-clip-text text-sm font-bold tracking-tight text-transparent sm:text-base"
