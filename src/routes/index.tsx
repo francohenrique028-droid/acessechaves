@@ -72,9 +72,8 @@ const btnWa = `${btn} bg-whatsapp text-foreground hover:brightness-110`;
 
 function Logo() {
   return (
-    <a href="#inicio" aria-label="Rei das Chaves — início" className="flex shrink-0 items-center gap-2 text-primary">
-      <span aria-hidden="true" className="text-3xl leading-none">♛</span>
-      <span className="flex flex-col leading-none"><strong className="text-lg tracking-wide">REI</strong><span className="text-[10px] font-bold tracking-widest">DAS CHAVES</span></span>
+    <a href="#inicio" aria-label="Rei das Chaves — início" className="flex shrink-0 items-center">
+      <img src="/logo-rei-das-chaves.svg" alt="Rei das Chaves" className="h-16 w-16 object-contain sm:h-[68px] sm:w-[68px]" />
     </a>
   );
 }
