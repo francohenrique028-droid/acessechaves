@@ -7,9 +7,9 @@ import {
 
 
 // ===== Configuração editável =====
-const PHONE = "558788248370";
-const PHONE_DISPLAY = "(87) 8824-8370";
-const WHATSAPP_NUMBER = "558788248370";
+const PHONE = "558587590223";
+const PHONE_DISPLAY = "+55 85 8759-0223";
+const WHATSAPP_NUMBER = "558587590223";
 const WA_MESSAGE =
   "Olá! Encontrei vocês pelo site e gostaria de solicitar um orçamento para um serviço de chaveiro.";
 const EMAIL = "";
