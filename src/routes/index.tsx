@@ -4,6 +4,7 @@ import {
   KeyRound, Phone, Menu, X, ShieldCheck, Award, Zap, Clock, DoorOpen, Key, Cpu, Wrench,
   Car, Home, ArrowRight, Star, MessageCircle, Facebook, Instagram, Mail, MapPin,
 } from "lucide-react";
+import logoAsset from "@/assets/bva-logo.png.asset.json";
 
 // ===== Configuração editável =====
 const PHONE = "1938861012";
@@ -70,7 +71,7 @@ const btnWa = `${btn} bg-whatsapp text-foreground hover:brightness-110`;
 function Logo() {
   return (
     <a href="#inicio" aria-label="BVA Chaveiro — início" className="flex shrink-0 items-center">
-      <span className="text-xl font-extrabold tracking-tight text-foreground">BVA <span className="text-primary">Chaveiro</span></span>
+      <img src={logoAsset.url} alt="BVA Chaveiro" className="h-10 w-auto" />
     </a>
   );
 }
