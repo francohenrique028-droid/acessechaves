@@ -251,6 +251,7 @@ function Footer() {
         </div>
         <div>
           <h3 className={col}>Links Rápidos</h3>
+          <Link to="/palavraschaves" className={link}>Bairros e serviços em Petrolina</Link>
           <ul className="space-y-2">{NAV.map((n) => <li key={n.href}><a href={n.href} className={link}>{n.label}</a></li>)}</ul>
         </div>
         <div>
