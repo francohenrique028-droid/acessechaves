@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "6603efc2-6d05-4b35-9953-16cf920bb6d7",
-  "project_id": "9150ee5f-e752-42e5-8ca2-acafce4045b3",
-  "url": "/__l5e/assets-v1/6603efc2-6d05-4b35-9953-16cf920bb6d7/bva-logo.png",
-  "r2_key": "a/v1/9150ee5f-e752-42e5-8ca2-acafce4045b3/6603efc2-6d05-4b35-9953-16cf920bb6d7/bva-logo.png",
-  "original_filename": "bva-logo.png",
-  "size": 260887,
   "content_type": "image/png",
-  "created_at": "2026-10-21T12:50:03Z"
+  "created_at": "2026-10-21T12:50:03Z",
+  "original_filename": "bva-logo.png",
+  "project_id": "5bb55123-c412-4445-8a04-9be8f0282585",
+  "r2_key": "a/v1/5bb55123-c412-4445-8a04-9be8f0282585/6603efc2-6d05-4b35-9953-16cf920bb6d7/bva-logo.png",
+  "size": 260887,
+  "url": "/__l5e/assets-v1/6603efc2-6d05-4b35-9953-16cf920bb6d7/bva-logo.png",
+  "version": 1
 }
