@@ -35,7 +35,7 @@ export const Route = createFileRoute("/")({
       { title: "Rei das Chaves em Petrolina-PE | Chaveiro Desde 1973" },
       { name: "description", content: "Rei das Chaves em Petrolina-PE desde 1973. Chaves automotivas e residenciais, cópias e abertura de portas. Rua Coronel Amorim, 106, Loja 09. Aberto das 8h às 18h." },
       { property: "og:title", content: "Rei das Chaves em Petrolina-PE | Chaveiro Desde 1973" },
-      { property: "og:description", content: "Chaveiro em Petrolina-PE: serviços automotivos e residenciais, abertura de portas, chaves codificadas e atendimento urgente." },
+      { property: "og:description", content: "Chaveiro em Petrolina-PE: serviços automotivos e residenciais, abertura de portas, chaves codificadas e atendimento sob consulta." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -128,7 +128,7 @@ function Hero() {
       </div>
       <div className="relative mx-auto max-w-4xl text-center animate-in fade-in slide-in-from-bottom-4 duration-700">
         <h1 className="mt-8 text-5xl font-extrabold leading-[1.05] tracking-tight sm:text-7xl lg:text-8xl">
-          Chaveiro 24 Horas <span className="text-gradient-brand">em Petrolina-PE</span>
+          Chaveiro desde 1973 <span className="text-gradient-brand">em Petrolina-PE</span>
         </h1>
         <p className="mx-auto mt-6 max-w-xl text-base text-muted-foreground sm:text-lg">
           Tradição desde 1973 em serviços de chaveiro residencial e automotivo. Visite nossa loja na Rua Coronel Amorim, 106, Loja 09, ou solicite atendimento pelo WhatsApp. Loja aberta das 8h às 18h.
