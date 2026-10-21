@@ -14,6 +14,9 @@ const categories = [
   { title: "Chaves automotivas e codificadas", icon: Car, description: "Serviços para chaves e controles de veículos.", terms: ["Chaveiro automotivo Petrolina", "Chaves codificadas Petrolina", "Cópia de chave codificada", "Programação de chave automotiva", "Codificação de chave de carro", "Chave transponder", "Cópia de chave com chip", "Chave canivete", "Chave de presença", "Programação de chave presencial", "Chave reserva para carro", "Segunda via de chave de carro", "Chave de carro perdida", "Troca de carcaça de chave", "Controle remoto automotivo", "Programação de controle de carro", "Abertura de carro", "Carro trancado com chave dentro", "Chave quebrada na ignição"] },
   { title: "Eletrônica e módulos automotivos", icon: Wrench, description: "Diagnóstico e manutenção eletrônica sob avaliação.", terms: ["Reparo de módulo automotivo Petrolina", "Conserto de módulo de injeção", "Programação de módulo automotivo", "Reprogramação de módulo", "Reparo de BCM", "Programação de BCM", "Reparo de imobilizador", "Programação de imobilizador", "Carro não reconhece a chave", "Luz do imobilizador acesa", "Miolo de ignição", "Reparo de cilindro de ignição", "Chave não gira na ignição", "Conserto de chave de carro"] },
   { title: "Buscas por orçamento e atendimento", icon: Search, description: "Termos usados para localizar e contratar serviços.", terms: ["Rei das Chaves Petrolina", "Rei das Chaves Centro Petrolina", "Chaveiro perto de mim em Petrolina", "Chaveiro próximo ao Centro", "Telefone de chaveiro em Petrolina", "Chaveiro aberto em Petrolina", "Horário de chaveiro em Petrolina", "Preço de chave codificada Petrolina", "Quanto custa cópia de chave", "Orçamento de chave automotiva", "Onde fazer chave de carro em Petrolina", "Loja de chaves Petrolina", "Chaveiro na Rua Coronel Amorim"] },
+  { title: "Fechaduras, cilindros e manutenção", icon: KeyRound, description: "Buscas específicas por problemas e peças de fechaduras; consulte os serviços disponíveis.", terms: ["Fechadura para porta de madeira", "Fechadura para porta de alumínio", "Fechadura para porta de vidro", "Fechadura para porta de ferro", "Fechadura para portão", "Fechadura de sobrepor", "Fechadura de embutir", "Fechadura digital", "Fechadura eletrônica", "Instalação de fechadura digital", "Troca de fechadura residencial", "Troca de cilindro de porta", "Troca de miolo de porta", "Manutenção de fechadura", "Fechadura emperrada", "Fechadura travada", "Fechadura não gira", "Chave não entra na fechadura", "Porta não abre com chave", "Chave partida na fechadura", "Cilindro de fechadura", "Segredo de fechadura", "Troca de segredo de cadeado", "Conserto de fechadura Petrolina", "Troca de fechadura Petrolina"] },
+  { title: "Tipos de chaves e duplicação", icon: KeyRound, description: "Termos para localizar opções de cópia e fabricação de chaves.", terms: ["Chave simples", "Chave tetra", "Chave multiponto", "Chave yale", "Chave para cadeado", "Chave de armário", "Chave de gaveta", "Chave de portão", "Chave de escritório", "Chave de porta residencial", "Cópia de chave comum Petrolina", "Cópia de chave tetra Petrolina", "Duplicar chave de casa", "Fazer chave reserva", "Segunda via de chave residencial", "Fazer chave pelo modelo", "Máquina de copiar chaves", "Chaveiro copiadora de chaves", "Loja para copiar chaves", "Onde fazer cópia de chave", "Chaveiro no Centro Petrolina", "Confecção de chaves Petrolina"] },
+  { title: "Situações comuns e dúvidas de clientes", icon: Search, description: "Como as pessoas descrevem a necessidade antes de procurar um chaveiro.", terms: ["Perdi a chave da minha casa", "Perdi a chave do apartamento", "Fiquei trancado para fora", "Porta fechou com a chave dentro", "Chave não vira na porta", "Minha fechadura travou", "Quebrei a chave na fechadura", "Preciso de cópia da chave", "Fazer chave reserva para carro", "Perdi a chave do veículo", "Carro não liga por causa da chave", "Controle do carro parou de funcionar", "Chave do carro não destrava", "Chave do carro não reconhecida", "Bateria da chave automotiva", "Onde fazer chave codificada", "Quanto custa segunda via de chave", "Quanto custa trocar uma fechadura", "Quanto custa abrir porta trancada", "Orçamento de serviço de chaveiro", "Chaveiro com loja física em Petrolina"] },
 ];
 const places = groups.flatMap(g => g.items);
 const localExamples = places.flatMap(place => [
@@ -21,6 +24,8 @@ const localExamples = places.flatMap(place => [
   "chaveiro automotivo no " + place + " Petrolina",
   "cópia de chaves no " + place + " Petrolina",
   "chaves codificadas no " + place + " Petrolina",
+  "chaveiro residencial no " + place + " Petrolina",
+  "programação de chave automotiva no " + place + " Petrolina",
 ]);
 const faqs = [
   { q: "Onde fica o Rei das Chaves em Petrolina?", a: "Nossa loja fica na Rua Coronel Amorim, 106, Loja 09, Centro, Petrolina-PE." },
@@ -53,7 +58,7 @@ export const Route = createFileRoute("/palavraschaves")({
   component: KeywordsPage,
 });
 const nearbyCities = ["Juazeiro-BA", "Lagoa Grande-PE", "Casa Nova-BA", "Sobradinho-BA", "Santa Maria da Boa Vista-PE"];
-const allTerms = categories.flatMap(category => category.terms);
+const allTerms = [...new Set(categories.flatMap(category => category.terms))];
 const pill = "rounded-full border border-border bg-surface px-3 py-2 text-sm text-foreground";
 function KeywordsPage() {
   return (
@@ -93,7 +98,7 @@ function KeywordsPage() {
         </section>
         <section className="mt-8 rounded-2xl border border-border bg-card p-6 sm:p-8">
           <h2 className="text-xl font-bold">Combinações locais de palavras-chave</h2>
-          <p className="mt-2 text-sm text-muted-foreground">Exemplos de termos pesquisados por bairro e serviço. Esta lista não indica unidades ou cobertura garantida em cada local.</p>
+          <p className="mt-2 text-sm text-muted-foreground">Variações de busca para pesquisa e planejamento de conteúdo. A lista não significa que existam unidades ou atendimento em todos os bairros.</p>
           <ul className="mt-5 grid gap-2 text-sm text-foreground sm:grid-cols-2">
             {localExamples.map(keyword => <li className="rounded-lg bg-surface px-3 py-2" key={keyword}>{keyword}</li>)}
           </ul>
