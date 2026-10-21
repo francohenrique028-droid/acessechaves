@@ -4,38 +4,38 @@ import {
   KeyRound, Phone, Menu, X, ShieldCheck, Award, Zap, Clock, DoorOpen, Key, Cpu, Wrench,
   Car, Home, ArrowRight, Star, MessageCircle, Facebook, Instagram, Mail, MapPin,
 } from "lucide-react";
-import logoAsset from "@/assets/bva-logo.png.asset.json";
+
 
 // ===== Configuração editável =====
-const PHONE = "1938861012";
-const PHONE_DISPLAY = "(19) 3886-1012";
-const WHATSAPP_NUMBER = ""; // Preencher somente após confirmar o número do WhatsApp da BVA
+const PHONE = "558788248370";
+const PHONE_DISPLAY = "(87) 8824-8370";
+const WHATSAPP_NUMBER = "558788248370";
 const WA_MESSAGE =
   "Olá! Encontrei vocês pelo site e gostaria de solicitar um orçamento para um serviço de chaveiro.";
 const EMAIL = "";
-const ADDRESS = "Valinhos, SP, Brasil";
-const FACEBOOK_URL = "#";
-const INSTAGRAM_URL = "#";
+const ADDRESS = "Rua Coronel Amorim, 106, Loja 09, Petrolina - PE";
+const FACEBOOK_URL = "";
+const INSTAGRAM_URL = "https://www.instagram.com/reidaschavespetrolina/";
 const STATS = [
-  { value: "24h", label: "Emergências sob consulta" },
-  { value: "BVA", label: "Chaveiro em Valinhos" },
-  { value: "Auto", label: "Chaves e fechaduras" },
+  { value: "1973", label: "Desde" },
+  { value: "8h–18h", label: "Horário da loja" },
+  { value: "Auto", label: "Chaves automotivas" },
   { value: "Casa", label: "Serviços residenciais" },
 ];
 // =================================
 
 const WA_LINK = WHATSAPP_NUMBER
-  ? `https://wa.me/55${WHATSAPP_NUMBER}?text=${encodeURIComponent(WA_MESSAGE)}`
+  ? `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WA_MESSAGE)}`
   : "#orcamento";
 const TEL = `tel:${PHONE}`;
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "BVA Chaveiro em Valinhos-SP | Chaveiro 24 Horas" },
-      { name: "description", content: "BVA Chaveiro em Valinhos-SP: abertura de portas, cópia e programação de chaves automotivas, serviços residenciais e atendimento emergencial." },
-      { property: "og:title", content: "BVA Chaveiro em Valinhos-SP | Chaveiro 24 Horas" },
-      { property: "og:description", content: "Chaveiro em Valinhos-SP: serviços automotivos e residenciais, abertura de portas, chaves codificadas e atendimento urgente." },
+      { title: "Rei das Chaves em Petrolina-PE | Chaveiro Desde 1973" },
+      { name: "description", content: "Rei das Chaves em Petrolina-PE desde 1973. Chaves automotivas e residenciais, cópias e abertura de portas. Rua Coronel Amorim, 106, Loja 09. Aberto das 8h às 18h." },
+      { property: "og:title", content: "Rei das Chaves em Petrolina-PE | Chaveiro Desde 1973" },
+      { property: "og:description", content: "Chaveiro em Petrolina-PE: serviços automotivos e residenciais, abertura de portas, chaves codificadas e atendimento urgente." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -45,10 +45,12 @@ export const Route = createFileRoute("/")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Locksmith",
-          name: "BVA Chaveiro",
-          telephone: PHONE,
-          address: { "@type": "PostalAddress", addressLocality: "Valinhos", addressRegion: "SP", addressCountry: "BR" },
-          areaServed: [{ "@type": "City", name: "Valinhos" }, { "@type": "City", name: "Vinhedo" }, { "@type": "City", name: "Louveira" }],
+          name: "Rei das Chaves",
+          telephone: "+" + PHONE,
+          openingHours: "Mo-Sa 08:00-18:00",
+          foundingDate: "1973",
+          address: { "@type": "PostalAddress", streetAddress: "Rua Coronel Amorim, 106, Loja 09", addressLocality: "Petrolina", addressRegion: "PE", addressCountry: "BR" },
+          areaServed: [{ "@type": "City", name: "Petrolina" }],
         }),
       },
     ],
@@ -70,8 +72,9 @@ const btnWa = `${btn} bg-whatsapp text-foreground hover:brightness-110`;
 
 function Logo() {
   return (
-    <a href="#inicio" aria-label="BVA Chaveiro — início" className="flex shrink-0 items-center">
-      <img src={logoAsset.url} alt="BVA Chaveiro" className="h-10 w-auto" />
+    <a href="#inicio" aria-label="Rei das Chaves — início" className="flex shrink-0 items-center gap-2 text-primary">
+      <span aria-hidden="true" className="text-3xl leading-none">♛</span>
+      <span className="flex flex-col leading-none"><strong className="text-lg tracking-wide">REI</strong><span className="text-[10px] font-bold tracking-widest">DAS CHAVES</span></span>
     </a>
   );
 }
@@ -125,21 +128,21 @@ function Hero() {
       </div>
       <div className="relative mx-auto max-w-4xl text-center animate-in fade-in slide-in-from-bottom-4 duration-700">
         <h1 className="mt-8 text-5xl font-extrabold leading-[1.05] tracking-tight sm:text-7xl lg:text-8xl">
-          Chaveiro 24 Horas <span className="text-gradient-brand">em Valinhos-SP</span>
+          Chaveiro 24 Horas <span className="text-gradient-brand">em Petrolina-PE</span>
         </h1>
         <p className="mx-auto mt-6 max-w-xl text-base text-muted-foreground sm:text-lg">
-          Atendimento rápido e urgente para serviços residenciais e automotivos em Valinhos-SP. Ligue e consulte a disponibilidade de atendimento no seu bairro.
+          Tradição desde 1973 em serviços de chaveiro residencial e automotivo. Visite nossa loja na Rua Coronel Amorim, 106, Loja 09, ou solicite atendimento pelo WhatsApp. Loja aberta das 8h às 18h.
         </p>
         <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
-          <a href={WA_LINK} className={`${btnPrimary} hidden sm:inline-flex`}>Solicitar Orçamento</a>
+          <a href={WA_LINK} className={`${btnPrimary} hidden sm:inline-flex`}>Chamar no WhatsApp</a>
           <a href={TEL} className={`${btnOutline} hero-mobile-flash`}><Phone className="h-4 w-4" />Ligar Agora</a>
-          <a href={WA_LINK} target={WHATSAPP_NUMBER ? "_blank" : undefined} rel="noopener" className={`${btnWa} hero-mobile-flash`}><MessageCircle className="h-4 w-4" />WhatsApp</a>
+          <a href={WA_LINK} target="_blank" rel="noopener" className={`${btnWa} hero-mobile-flash`}><MessageCircle className="h-4 w-4" />WhatsApp</a>
         </div>
         <div className="mx-auto mt-12 grid max-w-[360px] grid-cols-2 justify-items-center gap-x-3 gap-y-5 sm:mt-14 sm:max-w-none sm:grid-cols-3 sm:gap-6">
           {[
-            { icon: ShieldCheck, a: "Valinhos-SP", b: "e região" },
-            { icon: Clock, a: "Atendimento", b: "Ágil" },
-            { icon: Phone, a: "Atendimento", b: "Rápido" },
+            { icon: ShieldCheck, a: "Petrolina-PE", b: "e região" },
+            { icon: Clock, a: "8h às 18h", b: "Horário da loja" },
+            { icon: MapPin, a: "Petrolina-PE", b: "Loja física" },
           ].map(({ icon: I, a, b }, i) => (
             <div key={i} className={`flex items-center justify-center gap-2.5 ${i === 2 ? "col-span-2 sm:col-span-1" : ""}`}>
               <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-surface text-primary"><I className="h-5 w-5" /></span>
@@ -153,7 +156,7 @@ function Hero() {
 }
 
 const SERVICES = [
-  { icon: DoorOpen, tile: "bg-tile-blue/15 text-tile-blue", title: "Abertura de Portas", desc: "Abertura de portas residenciais, comerciais e automotivas em Valinhos com cuidado para preservar a fechadura.", tags: ["Residencial", "Comercial", "Automotivo"] },
+  { icon: DoorOpen, tile: "bg-tile-blue/15 text-tile-blue", title: "Abertura de Portas", desc: "Abertura de portas residenciais, comerciais e automotivas em Petrolina com cuidado para preservar a fechadura.", tags: ["Residencial", "Comercial", "Automotivo"] },
   { icon: Key, tile: "bg-tile-green/15 text-tile-green", title: "Cópia de Chaves", desc: "Cópias de chaves comuns e automotivas, incluindo modelos codificados sob consulta.", tags: ["Chaves Simples", "Tetra", "Codificadas"] },
   { icon: Cpu, tile: "bg-tile-purple/15 text-tile-purple", title: "Programação de Chaves", desc: "Programação e codificação de chaves automotivas com transponder, controles e sistemas de imobilizador.", tags: ["Transponder", "Controle", "Presença"] },
   { icon: Wrench, tile: "bg-tile-orange/15 text-tile-orange", title: "Reparo de Módulos", desc: "Conserto e reprogramação de módulos de injeção, BCM, imobilizadores e outros componentes eletrônicos.", tags: ["Injeção", "BCM", "Imobilizador"] },
@@ -163,7 +166,7 @@ function Services() {
   return (
     <section id="servicos" className="bg-background px-5 py-24">
       <div className="mx-auto max-w-6xl">
-        <SectionHead eyebrow="NOSSOS SERVIÇOS" title={<>Serviços de <span className="text-primary">Chaveiro em Valinhos-SP</span></>} sub="Atendimento para abertura de portas, fechaduras e chaves automotivas em Valinhos e região." />
+        <SectionHead eyebrow="NOSSOS SERVIÇOS" title={<>Serviços de <span className="text-primary">Chaveiro em Petrolina-PE</span></>} sub="Atendimento para abertura de portas, fechaduras e chaves automotivas em Petrolina e região." />
         <div className="grid gap-6 md:grid-cols-2">
           {SERVICES.map(({ icon: I, tile, title, desc, tags }) => (
             <article key={title} className="flex flex-col rounded-2xl border border-border bg-card p-8 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40">
@@ -188,7 +191,7 @@ function Services() {
           ))}
         </div>
         <div className="mt-12 text-center">
-          <a href="#servicos" className={`${btn} border border-primary text-primary hover:bg-primary hover:text-primary-foreground`}>Ver Todos os Serviços <ArrowRight className="h-4 w-4" /></a>
+          <a href="#orcamento" className={`${btn} border border-primary text-primary hover:bg-primary hover:text-primary-foreground`}>Ver Todos os Serviços <ArrowRight className="h-4 w-4" /></a>
         </div>
       </div>
     </section>
@@ -199,11 +202,11 @@ function Testimonials() {
   return (
     <section id="sobre" className="bg-surface px-5 py-24">
       <div className="mx-auto max-w-6xl">
-        <SectionHead eyebrow="ÁREA DE ATENDIMENTO" title="Chaveiro em Valinhos-SP e Região" sub="A BVA Chaveiro atende solicitações em Valinhos, com disponibilidade para cidades próximas sob consulta." />
+        <SectionHead eyebrow="ÁREA DE ATENDIMENTO" title="Chaveiro em Petrolina-PE e Região" sub="A Rei das Chaves está em Petrolina-PE desde 1973. Conheça nossa loja ou fale conosco para consultar os serviços disponíveis." />
         <div className="mx-auto flex max-w-xl flex-col items-center rounded-2xl border border-border bg-card px-6 py-10 text-center">
           <MapPin className="h-9 w-9 text-primary" />
-          <p className="mt-4 text-lg font-bold">Valinhos • Vinhedo • Louveira</p>
-          <p className="mt-3 text-sm text-muted-foreground">Informe seu bairro e o serviço necessário para confirmar a disponibilidade e o prazo de atendimento.</p>
+          <p className="mt-4 text-lg font-bold">Rua Coronel Amorim, 106, Loja 09 • Petrolina-PE</p>
+          <p className="mt-3 text-sm text-muted-foreground">A loja funciona das 8h às 18h. Para solicitar um serviço ou orçamento, entre em contato pelo WhatsApp.</p>
           <a href={TEL} className={`${btnPrimary} mt-7`}><Phone className="h-4 w-4" /> Solicitar Atendimento</a>
         </div>
       </div>
@@ -216,8 +219,8 @@ function CTA() {
     <section id="orcamento" className="px-5 py-24">
       <div className="mx-auto max-w-5xl rounded-3xl border border-border bg-surface px-6 py-16 text-center sm:px-14">
         <span className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-xs font-medium text-primary"><Zap className="h-3.5 w-3.5" />Atendimento Rápido e Profissional</span>
-        <h2 className="mt-7 text-4xl font-extrabold tracking-tight sm:text-6xl">Precisa de Chaveiro<br /><span className="text-primary">em Valinhos?</span></h2>
-        <p className="mx-auto mt-5 max-w-xl text-muted-foreground">Precisou de um chaveiro em Valinhos-SP? Ligue para informar seu endereço e solicitar atendimento residencial ou automotivo.</p>
+        <h2 className="mt-7 text-4xl font-extrabold tracking-tight sm:text-6xl">Precisa de Chaveiro<br /><span className="text-primary">em Petrolina?</span></h2>
+        <p className="mx-auto mt-5 max-w-xl text-muted-foreground">Precisa de serviços de chaveiro em Petrolina? Fale com o Rei das Chaves pelo WhatsApp ou visite nossa loja, aberta das 8h às 18h.</p>
         <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
           <a href={TEL} className={btnPrimary}><Phone className="h-4 w-4" />Ligar Agora</a>
           <a href={WHATSAPP_NUMBER ? WA_LINK : TEL} target={WHATSAPP_NUMBER ? "_blank" : undefined} rel="noopener" className={btnWa}><MessageCircle className="h-4 w-4" />WhatsApp</a>
@@ -241,9 +244,9 @@ function Footer() {
       <div className="mx-auto grid max-w-6xl gap-10 sm:grid-cols-2 lg:grid-cols-4">
         <div>
           <Logo />
-          <p className="mt-4 text-sm text-muted-foreground">BVA Chaveiro em Valinhos-SP. Atendimento residencial e automotivo em Valinhos e região.</p>
+          <p className="mt-4 text-sm text-muted-foreground">Rei das Chaves: tradição desde 1973 em Petrolina-PE. Rua Coronel Amorim, 106, Loja 09. Horário: 8h às 18h.</p>
           <div className="mt-5 flex gap-3">
-            <a href={FACEBOOK_URL} aria-label="Facebook" className="grid h-10 w-10 place-items-center rounded-full border border-border hover:border-primary hover:text-primary"><Facebook className="h-4 w-4" /></a>
+            
             <a href={INSTAGRAM_URL} aria-label="Instagram" className="grid h-10 w-10 place-items-center rounded-full border border-border hover:border-primary hover:text-primary"><Instagram className="h-4 w-4" /></a>
           </div>
         </div>
@@ -264,7 +267,7 @@ function Footer() {
           </ul>
         </div>
       </div>
-      <div className="mx-auto mt-12 max-w-6xl border-t border-border pt-6 text-center text-sm text-muted-foreground">© 2026 BVA Chaveiro. Todos os direitos reservados.</div>
+      <div className="mx-auto mt-12 max-w-6xl border-t border-border pt-6 text-center text-sm text-muted-foreground">© 2026 Rei das Chaves. Todos os direitos reservados.</div>
     </footer>
   );
 }
