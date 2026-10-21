@@ -37,15 +37,19 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "Rei das Chaves em Petrolina-PE | Chaveiro Desde 1973" },
       { property: "og:description", content: "Chaveiro em Petrolina-PE: serviços automotivos e residenciais, abertura de portas, chaves codificadas e atendimento sob consulta." },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://reidaschaves.lovable.app/" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "canonical", href: "https://reidaschaves.lovable.app/" }],
     scripts: [
       {
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Locksmith",
+          "@id": "https://reidaschaves.lovable.app/#business",
           name: "Rei das Chaves",
+          url: "https://reidaschaves.lovable.app/",
           telephone: "+" + PHONE,
           openingHours: "Mo-Sa 08:00-18:00",
           foundingDate: "1973",
