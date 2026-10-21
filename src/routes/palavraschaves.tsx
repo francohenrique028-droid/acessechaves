@@ -58,6 +58,7 @@ function KeywordsPage() {
       <Link to="/" className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline"><ArrowLeft className="h-4 w-4" /> Voltar ao Rei das Chaves</Link>
       <header className="mt-12 max-w-4xl">
         <p className="text-xs font-bold uppercase tracking-[0.2em] text-primary">Rei das Chaves • Petrolina-PE</p>
+        <p className="mt-3 inline-flex items-center rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">Guia de bairros e serviços atualizado • Outubro de 2026</p>
         <h1 className="mt-4 text-3xl font-extrabold leading-tight tracking-tight sm:text-5xl">Chaveiro em Petrolina-PE: <span className="text-primary">serviços, bairros e regiões</span></h1>
         <p className="mt-5 text-lg text-muted-foreground">Desde 1973, o Rei das Chaves oferece serviços de chaveiro em Petrolina, com loja na Rua Coronel Amorim, 106, Loja 09, no Centro. Conheça nossas especialidades e consulte atendimento pelo WhatsApp.</p>
         <div className="mt-7 flex flex-wrap gap-3">
