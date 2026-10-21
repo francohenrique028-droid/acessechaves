@@ -1,26 +1,25 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, type ReactNode } from "react";
-import logoAsset from "@/assets/chaveiro-junior-logo.png.asset.json";
 import {
   KeyRound, Phone, Menu, X, ShieldCheck, Award, Zap, Clock, DoorOpen, Key, Cpu, Wrench,
   Car, Home, ArrowRight, Star, MessageCircle, Facebook, Instagram, Mail, MapPin,
 } from "lucide-react";
 
 // ===== Configuração editável =====
-const PHONE = "8530211395";
-const PHONE_DISPLAY = "(85) 3021-1395";
-const WHATSAPP_NUMBER = ""; // Ex.: "85999999999" — preencha com o número real do WhatsApp
+const PHONE = "1938861012";
+const PHONE_DISPLAY = "(19) 3886-1012";
+const WHATSAPP_NUMBER = ""; // Preencher somente após confirmar o número do WhatsApp da BVA
 const WA_MESSAGE =
   "Olá! Encontrei vocês pelo site e gostaria de solicitar um orçamento para um serviço de chaveiro.";
-const EMAIL = "chaveirojuniorautos@gmail.com";
-const ADDRESS = "Av. Oliveira Paiva, 1881, Box 02";
+const EMAIL = "";
+const ADDRESS = "Valinhos, SP, Brasil";
 const FACEBOOK_URL = "#";
 const INSTAGRAM_URL = "#";
 const STATS = [
-  { value: "15+", label: "Anos de Experiência" },
-  { value: "5000+", label: "Clientes Atendidos" },
-  { value: "100%", label: "Profissionalismo" },
-  { value: "100%", label: "Garantia" },
+  { value: "24h", label: "Emergências sob consulta" },
+  { value: "BVA", label: "Chaveiro em Valinhos" },
+  { value: "Auto", label: "Chaves e fechaduras" },
+  { value: "Casa", label: "Serviços residenciais" },
 ];
 // =================================
 
@@ -32,10 +31,10 @@ const TEL = `tel:${PHONE}`;
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Chaveiro Junior | Chaveiro Automotivo e Residencial" },
-      { name: "description", content: "Chaveiro Junior: abertura de portas, cópia e programação de chaves automotivas, reparo de módulos. Mais de 15 anos de experiência." },
-      { property: "og:title", content: "Chaveiro Junior | Chaveiro Automotivo e Residencial" },
-      { property: "og:description", content: "Abertura de portas, cópia e programação de chaves e reparo de módulos com mais de 15 anos de experiência." },
+      { title: "BVA Chaveiro em Valinhos-SP | Chaveiro 24 Horas" },
+      { name: "description", content: "BVA Chaveiro em Valinhos-SP: abertura de portas, cópia e programação de chaves automotivas, serviços residenciais e atendimento emergencial." },
+      { property: "og:title", content: "BVA Chaveiro em Valinhos-SP | Chaveiro 24 Horas" },
+      { property: "og:description", content: "Chaveiro em Valinhos-SP: serviços automotivos e residenciais, abertura de portas, chaves codificadas e atendimento urgente." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -45,10 +44,10 @@ export const Route = createFileRoute("/")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Locksmith",
-          name: "Chaveiro Junior",
+          name: "BVA Chaveiro",
           telephone: PHONE,
-          email: EMAIL,
-          address: { "@type": "PostalAddress", streetAddress: ADDRESS, addressCountry: "BR" },
+          address: { "@type": "PostalAddress", addressLocality: "Valinhos", addressRegion: "SP", addressCountry: "BR" },
+          areaServed: [{ "@type": "City", name: "Valinhos" }, { "@type": "City", name: "Vinhedo" }, { "@type": "City", name: "Louveira" }],
         }),
       },
     ],
@@ -59,8 +58,8 @@ export const Route = createFileRoute("/")({
 const NAV = [
   { href: "#inicio", label: "Início" },
   { href: "#servicos", label: "Serviços" },
-  { href: "#sobre", label: "Sobre Nós" },
-  { href: "#orcamento", label: "Orçamento" },
+  { href: "#sobre", label: "Atendimento" },
+  { href: "#orcamento", label: "Chamar Agora" },
 ];
 
 const btn = "inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold transition-all duration-200 hover:-translate-y-0.5";
@@ -70,8 +69,8 @@ const btnWa = `${btn} bg-whatsapp text-foreground hover:brightness-110`;
 
 function Logo() {
   return (
-    <a href="#inicio" aria-label="Chaveiro Junior — início" className="flex shrink-0 items-center">
-      <img src={logoAsset.url} alt="Chaveiro Junior" width={698} height={260} className="h-auto w-[135px] object-contain sm:w-[160px]" />
+    <a href="#inicio" aria-label="BVA Chaveiro — início" className="flex shrink-0 items-center">
+      <span className="text-xl font-extrabold tracking-tight text-foreground">BVA <span className="text-primary">Chaveiro</span></span>
     </a>
   );
 }
@@ -125,10 +124,10 @@ function Hero() {
       </div>
       <div className="relative mx-auto max-w-4xl text-center animate-in fade-in slide-in-from-bottom-4 duration-700">
         <h1 className="mt-8 text-5xl font-extrabold leading-[1.05] tracking-tight sm:text-7xl lg:text-8xl">
-          Chaves & <span className="text-gradient-brand">Segurança</span>
+          Chaveiro 24 Horas <span className="text-gradient-brand">em Valinhos-SP</span>
         </h1>
         <p className="mx-auto mt-6 max-w-xl text-base text-muted-foreground sm:text-lg">
-          Soluções profissionais em chaveiro automotivo e residencial. Tecnologia e experiência para sua tranquilidade.
+          Atendimento rápido e urgente para serviços residenciais e automotivos em Valinhos-SP. Ligue e consulte a disponibilidade de atendimento no seu bairro.
         </p>
         <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
           <a href={WA_LINK} className={`${btnPrimary} hidden sm:inline-flex`}>Solicitar Orçamento</a>
@@ -137,7 +136,7 @@ function Hero() {
         </div>
         <div className="mx-auto mt-12 grid max-w-[360px] grid-cols-2 justify-items-center gap-x-3 gap-y-5 sm:mt-14 sm:max-w-none sm:grid-cols-3 sm:gap-6">
           {[
-            { icon: ShieldCheck, a: "+15 Anos", b: "de Experiência" },
+            { icon: ShieldCheck, a: "Valinhos-SP", b: "e região" },
             { icon: Clock, a: "Atendimento", b: "Ágil" },
             { icon: Phone, a: "Atendimento", b: "Rápido" },
           ].map(({ icon: I, a, b }, i) => (
@@ -153,8 +152,8 @@ function Hero() {
 }
 
 const SERVICES = [
-  { icon: DoorOpen, tile: "bg-tile-blue/15 text-tile-blue", title: "Abertura de Portas", desc: "Serviço emergencial para abertura de portas residenciais, comerciais e automotivas sem danificar a fechadura.", tags: ["Residencial", "Comercial", "Automotivo"] },
-  { icon: Key, tile: "bg-tile-green/15 text-tile-green", title: "Cópia de Chaves", desc: "Cópias precisas de todos os tipos de chaves, desde modelos simples até chaves codificadas de alta segurança.", tags: ["Chaves Simples", "Tetra", "Codificadas"] },
+  { icon: DoorOpen, tile: "bg-tile-blue/15 text-tile-blue", title: "Abertura de Portas", desc: "Abertura de portas residenciais, comerciais e automotivas em Valinhos com cuidado para preservar a fechadura.", tags: ["Residencial", "Comercial", "Automotivo"] },
+  { icon: Key, tile: "bg-tile-green/15 text-tile-green", title: "Cópia de Chaves", desc: "Cópias de chaves comuns e automotivas, incluindo modelos codificados sob consulta.", tags: ["Chaves Simples", "Tetra", "Codificadas"] },
   { icon: Cpu, tile: "bg-tile-purple/15 text-tile-purple", title: "Programação de Chaves", desc: "Programação e codificação de chaves automotivas com transponder, controles e sistemas de imobilizador.", tags: ["Transponder", "Controle", "Presença"] },
   { icon: Wrench, tile: "bg-tile-orange/15 text-tile-orange", title: "Reparo de Módulos", desc: "Conserto e reprogramação de módulos de injeção, BCM, imobilizadores e outros componentes eletrônicos.", tags: ["Injeção", "BCM", "Imobilizador"] },
 ];
@@ -163,7 +162,7 @@ function Services() {
   return (
     <section id="servicos" className="bg-background px-5 py-24">
       <div className="mx-auto max-w-6xl">
-        <SectionHead eyebrow="NOSSOS SERVIÇOS" title={<>Soluções Completas em <span className="text-primary">Chaveiro Profissional</span></>} sub="Oferecemos serviços especializados com equipamentos de última geração e profissionais altamente qualificados." />
+        <SectionHead eyebrow="NOSSOS SERVIÇOS" title={<>Serviços de <span className="text-primary">Chaveiro em Valinhos-SP</span></>} sub="Atendimento para abertura de portas, fechaduras e chaves automotivas em Valinhos e região." />
         <div className="grid gap-6 md:grid-cols-2">
           {SERVICES.map(({ icon: I, tile, title, desc, tags }) => (
             <article key={title} className="flex flex-col rounded-2xl border border-border bg-card p-8 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40">
@@ -195,26 +194,16 @@ function Services() {
   );
 }
 
-const GOOGLE_REVIEWS_URL = "https://www.google.com/maps/search/?api=1&query=Chaveiro+Junior+Chaves+codificadas+e+carimbos+Av+Oliveira+Paiva+1881+Fortaleza";
-
 function Testimonials() {
   return (
     <section id="sobre" className="bg-surface px-5 py-24">
       <div className="mx-auto max-w-6xl">
-        <SectionHead eyebrow="AVALIAÇÕES REAIS" title="O Que Nossos Clientes Dizem" sub="Veja as avaliações públicas do Chaveiro Junior no Google." />
+        <SectionHead eyebrow="ÁREA DE ATENDIMENTO" title="Chaveiro em Valinhos-SP e Região" sub="A BVA Chaveiro atende solicitações em Valinhos, com disponibilidade para cidades próximas sob consulta." />
         <div className="mx-auto flex max-w-xl flex-col items-center rounded-2xl border border-border bg-card px-6 py-10 text-center">
-          <p className="text-sm font-semibold text-muted-foreground">Chaveiro Junior — Chaves codificadas e carimbos</p>
-          <div className="mt-5 flex items-center gap-3">
-            <strong className="text-5xl font-extrabold text-foreground">4,7</strong>
-            <div className="flex gap-1 text-primary" aria-label="Nota média de 4,7 de 5">
-              {Array.from({ length: 5 }).map((_, i) => <Star key={i} className={`h-5 w-5 ${i < 4 ? "fill-current" : ""}`} />)}
-            </div>
-          </div>
-          <p className="mt-2 text-sm text-muted-foreground">154 avaliações no Google</p>
-          <p className="mt-4 text-xs text-muted-foreground">Nota e quantidade consultadas em outubro de 2026; podem mudar.</p>
-          <a href={GOOGLE_REVIEWS_URL} target="_blank" rel="noopener noreferrer" className={`${btnPrimary} mt-7`}>
-            Ver avaliações reais no Google <ArrowRight className="h-4 w-4" />
-          </a>
+          <MapPin className="h-9 w-9 text-primary" />
+          <p className="mt-4 text-lg font-bold">Valinhos • Vinhedo • Louveira</p>
+          <p className="mt-3 text-sm text-muted-foreground">Informe seu bairro e o serviço necessário para confirmar a disponibilidade e o prazo de atendimento.</p>
+          <a href={TEL} className={`${btnPrimary} mt-7`}><Phone className="h-4 w-4" /> Solicitar Atendimento</a>
         </div>
       </div>
     </section>
@@ -226,8 +215,8 @@ function CTA() {
     <section id="orcamento" className="px-5 py-24">
       <div className="mx-auto max-w-5xl rounded-3xl border border-border bg-surface px-6 py-16 text-center sm:px-14">
         <span className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-xs font-medium text-primary"><Zap className="h-3.5 w-3.5" />Atendimento Rápido e Profissional</span>
-        <h2 className="mt-7 text-4xl font-extrabold tracking-tight sm:text-6xl">Precisa de um Chaveiro<br /><span className="text-primary">Agora?</span></h2>
-        <p className="mx-auto mt-5 max-w-xl text-muted-foreground">Nossa equipe está pronta para atender você com agilidade e eficiência. Serviço rápido, profissional e com garantia.</p>
+        <h2 className="mt-7 text-4xl font-extrabold tracking-tight sm:text-6xl">Precisa de Chaveiro<br /><span className="text-primary">em Valinhos?</span></h2>
+        <p className="mx-auto mt-5 max-w-xl text-muted-foreground">Precisou de um chaveiro em Valinhos-SP? Ligue para informar seu endereço e solicitar atendimento residencial ou automotivo.</p>
         <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
           <a href={TEL} className={btnPrimary}><Phone className="h-4 w-4" />Ligar Agora</a>
           <a href={WHATSAPP_NUMBER ? WA_LINK : TEL} target={WHATSAPP_NUMBER ? "_blank" : undefined} rel="noopener" className={btnWa}><MessageCircle className="h-4 w-4" />WhatsApp</a>
@@ -251,7 +240,7 @@ function Footer() {
       <div className="mx-auto grid max-w-6xl gap-10 sm:grid-cols-2 lg:grid-cols-4">
         <div>
           <Logo />
-          <p className="mt-4 text-sm text-muted-foreground">Soluções profissionais em chaveiro automotivo e residencial. Tecnologia e experiência a seu serviço.</p>
+          <p className="mt-4 text-sm text-muted-foreground">BVA Chaveiro em Valinhos-SP. Atendimento residencial e automotivo em Valinhos e região.</p>
           <div className="mt-5 flex gap-3">
             <a href={FACEBOOK_URL} aria-label="Facebook" className="grid h-10 w-10 place-items-center rounded-full border border-border hover:border-primary hover:text-primary"><Facebook className="h-4 w-4" /></a>
             <a href={INSTAGRAM_URL} aria-label="Instagram" className="grid h-10 w-10 place-items-center rounded-full border border-border hover:border-primary hover:text-primary"><Instagram className="h-4 w-4" /></a>
@@ -269,12 +258,12 @@ function Footer() {
           <h3 className={col}>Contato</h3>
           <ul className="space-y-3">
             <li><a href={TEL} className={`${link} flex items-center gap-2`}><Phone className="h-4 w-4 text-primary" />{PHONE_DISPLAY}</a></li>
-            <li><a href={`mailto:${EMAIL}`} className={`${link} flex items-center gap-2 break-all`}><Mail className="h-4 w-4 shrink-0 text-primary" />{EMAIL}</a></li>
+            
             <li><a href={`https://maps.google.com/?q=${encodeURIComponent(ADDRESS)}`} target="_blank" rel="noopener" className={`${link} flex items-center gap-2`}><MapPin className="h-4 w-4 shrink-0 text-primary" />{ADDRESS}</a></li>
           </ul>
         </div>
       </div>
-      <div className="mx-auto mt-12 max-w-6xl border-t border-border pt-6 text-center text-sm text-muted-foreground">© 2026 Chaveiro Junior. Todos os direitos reservados.</div>
+      <div className="mx-auto mt-12 max-w-6xl border-t border-border pt-6 text-center text-sm text-muted-foreground">© 2026 BVA Chaveiro. Todos os direitos reservados.</div>
     </footer>
   );
 }
