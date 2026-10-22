@@ -79,7 +79,7 @@ function KeywordsPage() {
         <section className="mt-12 grid gap-6 lg:grid-cols-2" aria-label="Bairros, cidades e palavras-chave">
           <article className="rounded-2xl border border-border bg-card p-6 sm:p-8">
             <h2 className="text-xl font-bold">Bairros próximos a Jurerê</h2>
-            <div className="mt-5 flex flex-wrap gap-2">{groups[0].items.map(item => <span className={pill} key={item}>{item}</span>)}</div>
+            <div className="mt-5 flex flex-wrap gap-2">{(groups[0]?.items ?? []).map(item => <span className={pill} key={item}>{item}</span>)}</div>
           </article>
           <article className="rounded-2xl border border-border bg-card p-6 sm:p-8">
             <h2 className="text-xl font-bold">Outros bairros de Florianópolis</h2>
