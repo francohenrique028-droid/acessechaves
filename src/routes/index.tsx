@@ -126,8 +126,9 @@ function Hero() {
         ))}
       </div>
       <div className="relative mx-auto max-w-4xl text-center animate-in fade-in slide-in-from-bottom-4 duration-700">
-        <h1 className="mt-8 text-5xl font-extrabold leading-[1.05] tracking-tight sm:text-7xl lg:text-8xl">
-          Chaveiro 24 Horas <span className="text-gradient-brand">em Jurerê, Florianópolis</span>
+        <h1 className="mt-8 text-[clamp(1.65rem,7.2vw,3rem)] font-extrabold leading-[1.1] tracking-tight sm:text-7xl lg:text-8xl">
+          <span className="whitespace-nowrap">Chaveiro 24 Horas</span>{" "}
+          <span className="text-gradient-brand">em Jurerê, Florianópolis</span>
         </h1>
         <p className="mx-auto mt-6 max-w-xl text-base text-muted-foreground sm:text-lg">
           Atendimento de chaveiro residencial, comercial e automotivo em Jurerê e região. Abertura de portas, cópias de chaves, chaves codificadas e soluções para fechaduras. Plantão 24 horas.
