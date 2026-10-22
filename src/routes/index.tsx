@@ -72,7 +72,7 @@ function Logo({ variant = "header" }: { variant?: "header" | "full" }) {
       <img
         src={logoFull.url}
         alt="Chaveiro Jurerê — Tecnologia em Chaves"
-        className={isFull ? "h-14 w-auto max-w-[200px] object-contain sm:h-16 sm:max-w-[230px]" : "h-14 w-auto max-w-[190px] object-contain sm:h-16 sm:max-w-[210px]"}
+        className={isFull ? "h-11 w-auto max-w-[170px] object-contain sm:h-12 sm:max-w-[190px]" : "h-10 w-auto max-w-[150px] object-contain sm:h-12 sm:max-w-[180px]"}
       />
     </a>
   );
