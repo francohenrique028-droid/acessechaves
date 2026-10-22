@@ -66,9 +66,8 @@ const btnWa = `${btn} bg-whatsapp text-foreground hover:brightness-110`;
 
 function Logo() {
   return (
-    <a href="#inicio" aria-label="Chaveiro Jurerê 24H — início" className="flex shrink-0 items-center gap-2 font-extrabold text-primary">
-      <KeyRound className="h-7 w-7" />
-      <span className="text-sm leading-tight sm:text-base">CHAVEIRO<br />JURERÊ 24H</span>
+    <a href="#inicio" aria-label="Chaveiro Jurerê 24H — início" className="flex shrink-0 items-center">
+      <img src="/logo-chaveiro-jurere.png" alt="Chaveiro Jurerê — Tecnologia em Chaves" className="h-14 w-auto max-w-[210px] object-contain sm:h-16 sm:max-w-[250px]" />
     </a>
   );
 }
