@@ -4,6 +4,8 @@ import {
   KeyRound, Phone, Menu, X, ShieldCheck, Award, Zap, Clock, DoorOpen, Key, Cpu, Wrench,
   Car, Home, ArrowRight, Star, MessageCircle, Facebook, Instagram, Mail, MapPin,
 } from "lucide-react";
+import logoFull from "@/assets/chaveiro-jurere-logo.png.asset.json";
+import logoHeader from "@/assets/chaveiro-jurere-logo-header.png.asset.json";
 
 
 // ===== Configuração editável =====
@@ -64,10 +66,15 @@ const btnPrimary = `${btn} bg-gradient-brand text-primary-foreground shadow-glow
 const btnOutline = `${btn} border border-border bg-card text-foreground hover:border-primary/60`;
 const btnWa = `${btn} bg-whatsapp text-foreground hover:brightness-110`;
 
-function Logo() {
+function Logo({ variant = "header" }: { variant?: "header" | "full" }) {
+  const isFull = variant === "full";
   return (
     <a href="#inicio" aria-label="Chaveiro Jurerê 24H — início" className="flex shrink-0 items-center">
-      <img src="/logo-chaveiro-jurere.png" alt="Chaveiro Jurerê — Tecnologia em Chaves" className="h-14 w-auto max-w-[210px] object-contain sm:h-16 sm:max-w-[250px]" />
+      <img
+        src={(isFull ? logoFull : logoHeader).url}
+        alt="Chaveiro Jurerê — Tecnologia em Chaves"
+        className={isFull ? "h-24 w-auto max-w-[250px] object-contain" : "h-[52px] w-auto max-w-[190px] object-contain sm:h-[60px]"}
+      />
     </a>
   );
 }
@@ -236,7 +243,7 @@ function Footer() {
     <footer className="bg-surface px-5 pt-16 pb-8">
       <div className="mx-auto grid max-w-6xl gap-10 sm:grid-cols-2 lg:grid-cols-4">
         <div>
-          <Logo />
+          <Logo variant="full" />
           <p className="mt-4 text-sm text-muted-foreground">Chaveiro Jurerê 24H em Florianópolis - SC. Rodovia Maurício Sirotsky Sobrinho, 5401. Plantão 24 horas.</p>
           <div className="mt-5 flex gap-3">
             
