@@ -72,7 +72,7 @@ function Logo({ variant = "header" }: { variant?: "header" | "full" }) {
       <img
         src={logoFull.url}
         alt="Chaveiro Jurerê — Tecnologia em Chaves"
-        className={isFull ? "h-14 w-auto max-w-[200px] object-contain sm:h-16 sm:max-w-[230px]" : "h-14 w-auto max-w-[190px] object-contain sm:h-16 sm:max-w-[210px]"}
+        className={isFull ? "h-11 w-auto max-w-[170px] object-contain sm:h-12 sm:max-w-[190px]" : "h-10 w-auto max-w-[150px] object-contain sm:h-12 sm:max-w-[180px]"}
       />
     </a>
   );
@@ -82,7 +82,7 @@ function Header() {
   const [open, setOpen] = useState(false);
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-border bg-background/85 backdrop-blur-md">
-      <div className="mx-auto flex h-[78px] max-w-7xl items-center justify-between px-5">
+      <div className="mx-auto flex h-[62px] max-w-7xl items-center justify-between px-5 sm:h-[68px]">
         <Logo />
         <nav className="hidden gap-8 md:flex" aria-label="Principal">
           {NAV.map((n) => (
