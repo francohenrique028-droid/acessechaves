@@ -8,20 +8,21 @@ import logoFull from "@/assets/chaveiro-jurere-logo.png.asset.json";
 
 
 // ===== Configuração editável =====
-const PHONE = "5548999167599";
-const PHONE_DISPLAY = "(48) 99916-7599";
-const WHATSAPP_NUMBER = "5548999167599";
+const PHONE = "5583991094553";
+const PHONE_DISPLAY = "(83) 99109-4553";
+const PHONE_SECONDARY = "(83) 98744-2198";
+const WHATSAPP_NUMBER = "5583991094553";
 const WA_MESSAGE =
-  "Olá! Encontrei vocês pelo site e gostaria de solicitar um orçamento para um serviço de chaveiro.";
+  "Olá, Acesse Chaves! Encontrei vocês pelo site e gostaria de solicitar um orçamento em João Pessoa.";
 const EMAIL = "";
-const ADDRESS = "Rodovia Maurício Sirotsky Sobrinho, 5401 - Jurerê, Florianópolis - SC, 88053-700";
+const ADDRESS = "Av. Presidente Juscelino Kubitschek, 609 - Ernesto Geisel, João Pessoa - PB, 58075-400";
 const FACEBOOK_URL = "";
-const INSTAGRAM_URL = "";
+const INSTAGRAM_URL = "https://www.instagram.com/acessechaves/";
 const STATS = [
   { value: "24H", label: "Plantão" },
-  { value: "Jurerê", label: "Localização" },
+  { value: "João Pessoa", label: "PB" },
   { value: "Auto", label: "Chaves automotivas" },
-  { value: "Casa", label: "Serviços residenciais" },
+  { value: "24H", label: "Atendimento" },
 ];
 // =================================
 
@@ -33,21 +34,21 @@ const TEL = `tel:+${PHONE}`;
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Chaveiro Jurerê 24H | Chaveiro em Jurerê, Florianópolis" },
-      { name: "description", content: "Chaveiro Jurerê 24H em Florianópolis. Plantão 24 horas para abertura de portas, chaves codificadas, cópias, veículos e fechaduras. WhatsApp (48) 99916-7599." },
-      { property: "og:title", content: "Chaveiro Jurerê 24H | Florianópolis - SC" },
-      { property: "og:description", content: "Atendimento 24 horas em Jurerê para serviços de chaveiro residencial e automotivo. Solicite pelo WhatsApp." },
+      { title: "Acesse Chaves | Chaveiro em João Pessoa" },
+      { name: "description", content: "Chaveiro João Pessoa 24H em João Pessoa. Plantão 24 horas para abertura de portas, chaves codificadas, cópias, veículos e fechaduras. WhatsApp (83) 99109-4553." },
+      { property: "og:title", content: "Chaveiro João Pessoa 24H | João Pessoa - SC" },
+      { property: "og:description", content: "Atendimento 24 horas em João Pessoa para serviços de chaveiro residencial e automotivo. Solicite pelo WhatsApp." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     scripts: [{ type: "application/ld+json", children: JSON.stringify({
       "@context": "https://schema.org",
       "@type": "Locksmith",
-      name: "CHAVEIRO JURERÊ 24H",
-      telephone: "+5548999167599",
+      name: "ACESSE CHAVES",
+      telephone: "+5583991094553",
       openingHours: "Mo-Su 00:00-23:59",
-      address: { "@type": "PostalAddress", streetAddress: "Rodovia Maurício Sirotsky Sobrinho, 5401", addressLocality: "Florianópolis", addressRegion: "SC", postalCode: "88053-700", addressCountry: "BR" },
-      areaServed: { "@type": "Place", name: "Jurerê, Florianópolis - SC" },
+      address: { "@type": "PostalAddress", streetAddress: "Av. Presidente Juscelino Kubitschek, 609", addressLocality: "João Pessoa", addressRegion: "PB", postalCode: "58075-400", addressCountry: "BR" },
+      areaServed: { "@type": "Place", name: "João Pessoa e Grande João Pessoa" },
     }) }],
   }),
   component: Index,
@@ -68,10 +69,10 @@ const btnWa = `${btn} bg-whatsapp text-foreground hover:brightness-110`;
 function Logo({ variant = "header" }: { variant?: "header" | "full" }) {
   const isFull = variant === "full";
   return (
-    <a href="#inicio" aria-label="Chaveiro Jurerê 24H — início" className="flex shrink-0 items-center">
+    <a href="#inicio" aria-label="Chaveiro João Pessoa 24H — início" className="flex shrink-0 items-center">
       <img
         src={logoFull.url}
-        alt="Chaveiro Jurerê — Tecnologia em Chaves"
+        alt="Acesse Chaves — Chaveiro em João Pessoa"
         className={isFull ? "h-11 w-auto max-w-[170px] object-contain sm:h-12 sm:max-w-[190px]" : "h-10 w-auto max-w-[150px] object-contain sm:h-12 sm:max-w-[180px]"}
       />
     </a>
@@ -127,11 +128,11 @@ function Hero() {
       </div>
       <div className="relative mx-auto max-w-4xl text-center animate-in fade-in slide-in-from-bottom-4 duration-700">
         <h1 className="mt-8 text-[clamp(1.65rem,7.2vw,3rem)] font-extrabold leading-[1.1] tracking-tight sm:text-7xl lg:text-8xl">
-          <span className="whitespace-nowrap">Chaveiro 24 Horas</span>{" "}
-          <span className="text-gradient-brand">em Jurerê, Florianópolis</span>
+          <span className="whitespace-nowrap">Acesse Chaves 24 Horas</span>{" "}
+          <span className="text-gradient-brand">em João Pessoa</span>
         </h1>
         <p className="mx-auto mt-6 max-w-xl text-base text-muted-foreground sm:text-lg">
-          Atendimento de chaveiro residencial, comercial e automotivo em Jurerê e região. Abertura de portas, cópias de chaves, chaves codificadas e soluções para fechaduras. Plantão 24 horas.
+          Atendimento de chaveiro residencial, comercial e automotivo em João Pessoa e Grande João Pessoa. Abertura de portas, cópias de chaves, chaves codificadas e soluções para fechaduras. Plantão 24 horas.
         </p>
         <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
           <a href={WA_LINK} className={`${btnPrimary} hidden sm:inline-flex`}>Chamar no WhatsApp</a>
@@ -140,9 +141,9 @@ function Hero() {
         </div>
         <div className="mx-auto mt-12 grid max-w-[360px] grid-cols-2 justify-items-center gap-x-3 gap-y-5 sm:mt-14 sm:max-w-none sm:grid-cols-3 sm:gap-6">
           {[
-            { icon: ShieldCheck, a: "Jurerê - SC", b: "e região" },
+            { icon: ShieldCheck, a: "João Pessoa - PB", b: "e região" },
             { icon: Clock, a: "24 horas", b: "Plantão" },
-            { icon: MapPin, a: "Jurerê - SC", b: "Florianópolis" },
+            { icon: MapPin, a: "João Pessoa - PB", b: "João Pessoa" },
           ].map(({ icon: I, a, b }, i) => (
             <div key={i} className={`flex items-center justify-center gap-2.5 ${i === 2 ? "col-span-2 sm:col-span-1" : ""}`}>
               <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-surface text-primary"><I className="h-5 w-5" /></span>
@@ -156,17 +157,17 @@ function Hero() {
 }
 
 const SERVICES = [
-  { icon: DoorOpen, tile: "bg-tile-blue/15 text-tile-blue", title: "Abertura de Portas", desc: "Abertura de portas residenciais, comerciais e automotivas em Jurerê. Consulte o atendimento para sua situação.", tags: ["Residencial", "Comercial", "Automotivo"] },
+  { icon: DoorOpen, tile: "bg-tile-blue/15 text-tile-blue", title: "Abertura de Portas", desc: "Abertura de portas residenciais, comerciais e automotivas em João Pessoa. Consulte o atendimento para sua situação.", tags: ["Residencial", "Comercial", "Automotivo"] },
   { icon: Key, tile: "bg-tile-green/15 text-tile-green", title: "Cópia de Chaves", desc: "Cópias de chaves comuns e automotivas, incluindo modelos codificados sob consulta.", tags: ["Chaves Simples", "Tetra", "Codificadas"] },
   { icon: Cpu, tile: "bg-tile-purple/15 text-tile-purple", title: "Programação de Chaves", desc: "Programação e codificação de chaves automotivas com transponder, controles e sistemas de imobilizador.", tags: ["Transponder", "Controle", "Presença"] },
-  { icon: Wrench, tile: "bg-tile-orange/15 text-tile-orange", title: "Fechaduras e Cofres", desc: "Serviços de fechaduras residenciais, comerciais e eletrônicas. Consulte a disponibilidade para o seu modelo.", tags: ["Fechaduras", "Eletrônicas", "Cofres"] },
+  { icon: Wrench, tile: "bg-tile-orange/15 text-tile-orange", title: "Abertura e Confecção", desc: "Abertura de portas e confecção de chaves. Consulte a equipe sobre o serviço necessário.", tags: ["Abertura", "Confecção", "Atendimento"] },
 ];
 
 function Services() {
   return (
     <section id="servicos" className="bg-background px-5 py-24">
       <div className="mx-auto max-w-6xl">
-        <SectionHead eyebrow="NOSSOS SERVIÇOS" title={<>Serviços de <span className="text-primary">Chaveiro em Jurerê - SC</span></>} sub="Atendimento para abertura de portas, fechaduras e chaves automotivas em Jurerê e região." />
+        <SectionHead eyebrow="NOSSOS SERVIÇOS" title={<>Serviços de <span className="text-primary">Chaveiro em João Pessoa - PB</span></>} sub="Atendimento para abertura de portas, fechaduras e chaves automotivas em João Pessoa e Grande João Pessoa." />
         <div className="grid gap-6 md:grid-cols-2">
           {SERVICES.map(({ icon: I, tile, title, desc, tags }) => (
             <article key={title} className="flex flex-col rounded-2xl border border-border bg-card p-8 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40">
@@ -181,8 +182,8 @@ function Services() {
         </div>
         <div className="mt-6 grid gap-6 md:grid-cols-2">
           {[
-            { icon: Car, t: "Automotivo", d: "Soluções completas para veículos de todas as marcas e modelos." },
-            { icon: Home, t: "Residencial", d: "Segurança e praticidade para sua casa e família." },
+            { icon: Car, t: "Automotivo", d: "Serviços de chaves e fechaduras automotivas. Consulte a disponibilidade para seu veículo." },
+            { icon: Home, t: "Residencial", d: "Serviços residenciais de abertura, cópia de chaves e fechaduras." },
           ].map(({ icon: I, t, d }) => (
             <div key={t} className="flex items-center gap-5 rounded-2xl border border-border bg-card p-6">
               <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-primary/10 text-primary"><I className="h-6 w-6" /></span>
@@ -202,10 +203,10 @@ function Testimonials() {
   return (
     <section id="sobre" className="bg-surface px-5 py-24">
       <div className="mx-auto max-w-6xl">
-        <SectionHead eyebrow="ÁREA DE ATENDIMENTO" title="Chaveiro em Jurerê - SC e Região" sub="Chaveiro em Jurerê, Florianópolis - SC. Consulte nossa equipe para atendimento na região." />
+        <SectionHead eyebrow="ÁREA DE ATENDIMENTO" title="Acesse Chaves em João Pessoa e Região" sub="Chaveiro em João Pessoa - PB. Consulte nossa equipe para atendimento na região." />
         <div className="mx-auto flex max-w-xl flex-col items-center rounded-2xl border border-border bg-card px-6 py-10 text-center">
           <MapPin className="h-9 w-9 text-primary" />
-          <p className="mt-4 text-lg font-bold">Rodovia Maurício Sirotsky Sobrinho, 5401 • Jurerê, Florianópolis - SC</p>
+          <p className="mt-4 text-lg font-bold">Av. Presidente Juscelino Kubitschek, 609 • João Pessoa - PB</p>
           <p className="mt-3 text-sm text-muted-foreground">Plantão 24 horas. Para solicitar atendimento ou orçamento, entre em contato pelo WhatsApp.</p>
           <a href={TEL} className={`${btnPrimary} mt-7`}><Phone className="h-4 w-4" /> Solicitar Atendimento</a>
         </div>
@@ -218,9 +219,9 @@ function CTA() {
   return (
     <section id="orcamento" className="px-5 py-24">
       <div className="mx-auto max-w-5xl rounded-3xl border border-border bg-surface px-6 py-16 text-center sm:px-14">
-        <span className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-xs font-medium text-primary"><Zap className="h-3.5 w-3.5" />Atendimento Rápido e Profissional</span>
-        <h2 className="mt-7 text-4xl font-extrabold tracking-tight sm:text-6xl">Precisa de Chaveiro<br /><span className="text-primary">em Jurerê?</span></h2>
-        <p className="mx-auto mt-5 max-w-xl text-muted-foreground">Precisa de chaveiro em Jurerê? Fale com o Chaveiro Jurerê 24H pelo WhatsApp. Atendimento 24 horas.</p>
+        <span className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-xs font-medium text-primary"><Zap className="h-3.5 w-3.5" />Atendimento 24 horas</span>
+        <h2 className="mt-7 text-4xl font-extrabold tracking-tight sm:text-6xl">Precisa de Chaveiro<br /><span className="text-primary">em João Pessoa?</span></h2>
+        <p className="mx-auto mt-5 max-w-xl text-muted-foreground">Precisa de chaveiro em João Pessoa? Fale com o Chaveiro João Pessoa 24H pelo WhatsApp. Atendimento 24 horas.</p>
         <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
           <a href={TEL} className={btnPrimary}><Phone className="h-4 w-4" />Ligar Agora</a>
           <a href={WHATSAPP_NUMBER ? WA_LINK : TEL} target={WHATSAPP_NUMBER ? "_blank" : undefined} rel="noopener" className={btnWa}><MessageCircle className="h-4 w-4" />WhatsApp</a>
@@ -243,8 +244,8 @@ function Footer() {
     <footer className="bg-surface px-5 pt-16 pb-8">
       <div className="mx-auto grid max-w-6xl gap-10 sm:grid-cols-2 lg:grid-cols-4">
         <div>
-          <Logo variant="full" />
-          <p className="mt-4 text-sm text-muted-foreground">Chaveiro Jurerê 24H em Florianópolis - SC. Rodovia Maurício Sirotsky Sobrinho, 5401. Plantão 24 horas.</p>
+          <div className="text-2xl font-black tracking-wide text-primary">ACESSE CHAVES</div>
+          <p className="mt-4 text-sm text-muted-foreground">Chaveiro João Pessoa 24H em João Pessoa - SC. Av. Presidente Juscelino Kubitschek, 609. Plantão 24 horas.</p>
           <div className="mt-5 flex gap-3">
             
             {INSTAGRAM_URL && <a href={INSTAGRAM_URL} aria-label="Instagram" className="grid h-10 w-10 place-items-center rounded-full border border-border hover:border-primary hover:text-primary"><Instagram className="h-4 w-4" /></a>}
@@ -252,7 +253,7 @@ function Footer() {
         </div>
         <div>
           <h3 className={col}>Links Rápidos</h3>
-          <Link to="/palavraschaves" className={link}>Bairros e serviços em Jurerê</Link>
+          <Link to="/palavraschaves" className={link}>Bairros e serviços em João Pessoa</Link>
           <ul className="space-y-2">{NAV.map((n) => <li key={n.href}><a href={n.href} className={link}>{n.label}</a></li>)}</ul>
         </div>
         <div>
@@ -263,12 +264,13 @@ function Footer() {
           <h3 className={col}>Contato</h3>
           <ul className="space-y-3">
             <li><a href={TEL} className={`${link} flex items-center gap-2`}><Phone className="h-4 w-4 text-primary" />{PHONE_DISPLAY}</a></li>
+            <li><a href="tel:+5583987442198" className={`${link} flex items-center gap-2`}><Phone className="h-4 w-4 text-primary" />{PHONE_SECONDARY}</a></li>
             
             <li><a href={`https://maps.google.com/?q=${encodeURIComponent(ADDRESS)}`} target="_blank" rel="noopener" className={`${link} flex items-center gap-2`}><MapPin className="h-4 w-4 shrink-0 text-primary" />{ADDRESS}</a></li>
           </ul>
         </div>
       </div>
-      <div className="mx-auto mt-12 max-w-6xl border-t border-border pt-6 text-center text-sm text-muted-foreground">© 2026 Chaveiro Jurerê 24H. Todos os direitos reservados.</div>
+      <div className="mx-auto mt-12 max-w-6xl border-t border-border pt-6 text-center text-sm text-muted-foreground">© 2026 Chaveiro João Pessoa 24H. Todos os direitos reservados.</div>
     </footer>
   );
 }
