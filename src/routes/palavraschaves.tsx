@@ -76,6 +76,7 @@ function KeywordsPage() {
           <img src="https://i.imgur.com/t3s7ytw.gif" alt="Ícone animado de verificação" className="h-4 w-4 object-contain sm:h-[18px] sm:w-[18px]" />
         </div>
         <style>{`@keyframes google-colors-shift { from { background-position: 0% 50%; } to { background-position: 100% 50%; } } @media (prefers-reduced-motion: reduce) { .google-animated-text { animation: none !important; } }`}</style>
+        <a href={WA} target="_blank" rel="noopener noreferrer" className="mt-7 inline-flex rounded-full bg-primary px-6 py-3 font-bold text-primary-foreground">Solicitar orçamento pelo WhatsApp</a>
         <section className="mt-12 grid gap-6 lg:grid-cols-2" aria-label="Bairros, cidades e palavras-chave">
           <article className="rounded-2xl border border-border bg-card p-6 sm:p-8">
             <h2 className="text-xl font-bold">Ernesto Geisel e bairros vizinhos</h2>
