@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState, type ReactNode } from "react";
+import logoAsset from "@/assets/acesse-chaves-logo.png.asset.json";
 import {
   KeyRound, Phone, Menu, X, ShieldCheck, Award, Zap, Clock, DoorOpen, Key, Cpu, Wrench,
   Car, Home, ArrowRight, Star, MessageCircle, Facebook, Instagram, Mail, MapPin,
@@ -68,10 +69,11 @@ const btnWa = `${btn} bg-whatsapp text-foreground hover:brightness-110`;
 function Logo({ variant = "header" }: { variant?: "header" | "full" }) {
   return (
     <a href="#inicio" aria-label="Acesse Chaves — início" className="flex shrink-0 items-center gap-2">
-      <KeyRound className="h-9 w-9 text-primary" aria-hidden="true" />
-      <span className={variant === "full" ? "text-2xl font-black tracking-wide text-foreground" : "text-xl font-black tracking-wide text-foreground"}>
-        ACESSE <span className="text-primary">CHAVES</span>
-      </span>
+      <img
+        src={logoAsset.url}
+        alt="Acesse Chaves — Soluções em chaves e codificações"
+        className={variant === "full" ? "h-20 w-auto object-contain" : "h-12 w-auto object-contain sm:h-14"}
+      />
     </a>
   );
 }

@@ -14,6 +14,8 @@ export const Route = createFileRoute("/palavraschaves")({
       { name: "description", content: "Acesse Chaves: chaveiro residencial e automotivo em João Pessoa e Grande João Pessoa. Atendimento 24 horas. WhatsApp (83) 99109-4553." },
       { property: "og:title", content: "Acesse Chaves | Serviços em João Pessoa - PB" },
       { property: "og:description", content: "Chaveiro 24 horas em João Pessoa e Grande João Pessoa. Consulte nossos serviços e solicite orçamento." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: ServicesPage,
