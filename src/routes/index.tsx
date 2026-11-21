@@ -4,7 +4,6 @@ import {
   KeyRound, Phone, Menu, X, ShieldCheck, Award, Zap, Clock, DoorOpen, Key, Cpu, Wrench,
   Car, Home, ArrowRight, Star, MessageCircle, Facebook, Instagram, Mail, MapPin,
 } from "lucide-react";
-import logoFull from "@/assets/chaveiro-jurere-logo.png.asset.json";
 
 
 // ===== Configuração editável =====
@@ -67,14 +66,12 @@ const btnOutline = `${btn} border border-border bg-card text-foreground hover:bo
 const btnWa = `${btn} bg-whatsapp text-foreground hover:brightness-110`;
 
 function Logo({ variant = "header" }: { variant?: "header" | "full" }) {
-  const isFull = variant === "full";
   return (
-    <a href="#inicio" aria-label="Chaveiro João Pessoa 24H — início" className="flex shrink-0 items-center">
-      <img
-        src={logoFull.url}
-        alt="Acesse Chaves — Chaveiro em João Pessoa"
-        className={isFull ? "h-11 w-auto max-w-[170px] object-contain sm:h-12 sm:max-w-[190px]" : "h-10 w-auto max-w-[150px] object-contain sm:h-12 sm:max-w-[180px]"}
-      />
+    <a href="#inicio" aria-label="Acesse Chaves — início" className="flex shrink-0 items-center gap-2">
+      <KeyRound className="h-9 w-9 text-primary" aria-hidden="true" />
+      <span className={variant === "full" ? "text-2xl font-black tracking-wide text-foreground" : "text-xl font-black tracking-wide text-foreground"}>
+        ACESSE <span className="text-primary">CHAVES</span>
+      </span>
     </a>
   );
 }
@@ -244,7 +241,7 @@ function Footer() {
     <footer className="bg-surface px-5 pt-16 pb-8">
       <div className="mx-auto grid max-w-6xl gap-10 sm:grid-cols-2 lg:grid-cols-4">
         <div>
-          <div className="text-2xl font-black tracking-wide text-primary">ACESSE CHAVES</div>
+          <Logo variant="full" />
           <p className="mt-4 text-sm text-muted-foreground">Chaveiro João Pessoa 24H em João Pessoa - SC. Av. Presidente Juscelino Kubitschek, 609. Plantão 24 horas.</p>
           <div className="mt-5 flex gap-3">
             
