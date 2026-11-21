@@ -89,7 +89,7 @@ function Header() {
             <a key={n.href} href={n.href} className="text-sm text-muted-foreground transition-colors hover:text-foreground">{n.label}</a>
           ))}
         </nav>
-        <a href={TEL} className={`${btnPrimary} !hidden !px-5 !py-2.5 md:!inline-flex`}><Phone className="h-4 w-4" />Ligar Agora</a>
+        <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className={`${btnPrimary} !hidden !px-5 !py-2.5 md:!inline-flex`}><MessageCircle className="h-4 w-4" />WhatsApp</a>
         <button className="md:hidden" onClick={() => setOpen(!open)} aria-label="Abrir menu" aria-expanded={open}>
           {open ? <X /> : <Menu />}
         </button>
@@ -99,7 +99,7 @@ function Header() {
           {NAV.map((n) => (
             <a key={n.href} href={n.href} onClick={() => setOpen(false)} className="block border-b border-border py-3 text-muted-foreground">{n.label}</a>
           ))}
-          <a href={TEL} className={`${btnPrimary} mt-4 w-full`}><Phone className="h-4 w-4" />Ligar Agora</a>
+          <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className={`${btnPrimary} mt-4 w-full`}><MessageCircle className="h-4 w-4" />WhatsApp</a>
         </nav>
       )}
     </header>
@@ -135,7 +135,7 @@ function Hero() {
         </p>
         <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
           <a href={WA_LINK} className={`${btnPrimary} hidden sm:inline-flex`}>Chamar no WhatsApp</a>
-          <a href={TEL} className={`${btnOutline} hero-mobile-flash`}><Phone className="h-4 w-4" />Ligar Agora</a>
+          <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className={`${btnOutline} hero-mobile-flash`}><MessageCircle className="h-4 w-4" />Solicitar Orçamento</a>
           <a href={WA_LINK} target="_blank" rel="noopener" className={`${btnWa} hero-mobile-flash`}><MessageCircle className="h-4 w-4" />WhatsApp</a>
         </div>
         <div className="mx-auto mt-12 grid max-w-[360px] grid-cols-2 justify-items-center gap-x-3 gap-y-5 sm:mt-14 sm:max-w-none sm:grid-cols-3 sm:gap-6">
@@ -207,7 +207,7 @@ function Testimonials() {
           <MapPin className="h-9 w-9 text-primary" />
           <p className="mt-4 text-lg font-bold">Av. Presidente Juscelino Kubitschek, 609 • João Pessoa - PB</p>
           <p className="mt-3 text-sm text-muted-foreground">Plantão 24 horas. Para solicitar atendimento ou orçamento, entre em contato pelo WhatsApp.</p>
-          <a href={TEL} className={`${btnPrimary} mt-7`}><Phone className="h-4 w-4" /> Solicitar Atendimento</a>
+          <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className={`${btnPrimary} mt-7`}><MessageCircle className="h-4 w-4" /> Solicitar Atendimento</a>
         </div>
       </div>
     </section>
@@ -222,7 +222,7 @@ function CTA() {
         <h2 className="mt-7 text-4xl font-extrabold tracking-tight sm:text-6xl">Precisa de Chaveiro<br /><span className="text-primary">em João Pessoa?</span></h2>
         <p className="mx-auto mt-5 max-w-xl text-muted-foreground">Precisa de chaveiro em João Pessoa? Fale com o Chaveiro João Pessoa 24H pelo WhatsApp. Atendimento 24 horas.</p>
         <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
-          <a href={TEL} className={btnPrimary}><Phone className="h-4 w-4" />Ligar Agora</a>
+          <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className={btnPrimary}><MessageCircle className="h-4 w-4" />Solicitar Orçamento</a>
           <a href={WHATSAPP_NUMBER ? WA_LINK : TEL} target={WHATSAPP_NUMBER ? "_blank" : undefined} rel="noopener" className={btnWa}><MessageCircle className="h-4 w-4" />WhatsApp</a>
         </div>
         <hr className="my-12 border-border" />
@@ -263,6 +263,7 @@ function Footer() {
           <h3 className={col}>Contato</h3>
           <ul className="space-y-3">
             <li><a href={TEL} className={`${link} flex items-center gap-2`}><Phone className="h-4 w-4 text-primary" />{PHONE_DISPLAY}</a></li>
+            <li><a href={WA_LINK} target="_blank" rel="noopener noreferrer" className={`${link} flex items-center gap-2`}><MessageCircle className="h-4 w-4 text-primary" />Conversar pelo WhatsApp</a></li>
             <li><a href="tel:+5583987442198" className={`${link} flex items-center gap-2`}><Phone className="h-4 w-4 text-primary" />{PHONE_SECONDARY}</a></li>
             
             <li><a href={`https://maps.google.com/?q=${encodeURIComponent(ADDRESS)}`} target="_blank" rel="noopener" className={`${link} flex items-center gap-2`}><MapPin className="h-4 w-4 shrink-0 text-primary" />{ADDRESS}</a></li>
