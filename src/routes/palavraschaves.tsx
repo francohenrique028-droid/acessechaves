@@ -4,9 +4,9 @@ import { KeyRound, Car, Wrench, Search } from "lucide-react";
 const PHONE = "5583991094553";
 const WA = "https://wa.me/" + PHONE + "?text=" + encodeURIComponent("Olá! Encontrei a Acesse Chaves pelo Google e gostaria de consultar um serviço de chaveiro em João Pessoa.");
 const groups = [
-  { title: "Ernesto Geisel e arredores", items: ["Ernesto Geisel", "José Américo", "Água Fria", "Cristo Redentor", "Costa e Silva", "Funcionários"] },
-  { title: "Bairros de João Pessoa", items: ["Centro", "Torre", "Bancários", "Mangabeira", "Valentina", "Cruz das Armas", "Jaguaribe", "Tambauzinho", "Tambaú", "Manaíra"] },
-  { title: "Grande João Pessoa", items: ["Bayeux", "Cabedelo", "Santa Rita", "Conde"] },
+  { title: "Ernesto Geisel e bairros vizinhos", items: ["Ernesto Geisel", "João Paulo II", "Cristo Redentor", "Água Fria", "José Américo", "Cuiá", "Gramame"] },
+  { title: "Bairros próximos da Zona Sul", items: ["Grotão", "Funcionários II", "Funcionários III", "Funcionários IV", "Costa e Silva", "Ernani Sátiro", "Esplanada", "Cidade dos Colibris", "Mangabeira", "Valentina"] },
+  { title: "Outras regiões de João Pessoa", items: ["Bancários", "Jardim Cidade Universitária", "Jardim São Paulo", "Cruz das Armas", "Jaguaribe", "Torre", "Centro"] },
 ];
 const categories = [
   { title: "Chaveiro residencial e comercial", icon: KeyRound, description: "Cópias, fechaduras e soluções para imóveis.", terms: ["Chaveiro em João Pessoa", "Chaveiro no João Pessoa", "Chaveiro residencial João Pessoa", "Chaveiro comercial João Pessoa", "Cópia de chaves João Pessoa", "Fazer cópia de chave em João Pessoa", "Cópia de chave simples", "Cópia de chave tetra", "Abertura de porta residencial", "Abertura de porta comercial", "Porta trancada sem chave", "Chave quebrada na fechadura", "Troca de miolo de fechadura", "Troca de segredo de fechadura", "Conserto de fechadura", "Chaveiro para condomínio", "Chaveiro para loja", "Chaveiro para escritório"] },
@@ -65,8 +65,8 @@ function KeywordsPage() {
       <div className="mx-auto max-w-6xl">
         <Link to="/" className="text-sm font-semibold text-primary hover:underline">← Voltar ao Acesse Chaves</Link>
         <p className="mt-12 text-xs font-semibold uppercase tracking-[0.2em] text-primary">Planejamento de palavras-chave</p>
-        <h1 className="mt-3 text-3xl font-extrabold tracking-tight sm:text-5xl">Bairros, cidades e serviços de chaveiro</h1>
-        <p className="mt-5 max-w-3xl text-muted-foreground">Lista de localidades e termos para planejamento de campanhas e conteúdo. Os bairros abaixo são referências de pesquisa na região de João Pessoa - PB; atendimento externo e disponibilidade devem ser confirmados com a empresa.</p>
+        <h1 className="mt-3 text-3xl font-extrabold tracking-tight sm:text-5xl">Palavras-chave de chaveiro em Ernesto Geisel e João Pessoa</h1>
+        <p className="mt-5 max-w-3xl text-muted-foreground">Palavras-chave de serviços de chaveiro com foco em Ernesto Geisel e bairros próximos de João Pessoa - PB. As localidades são referências de pesquisa; confirme a disponibilidade de atendimento antes de contratar.</p>
         <div className="mb-3 mt-4 flex items-center gap-1.5">
           <span className="google-animated-text bg-clip-text text-sm font-bold tracking-tight text-transparent sm:text-base" style={{
             backgroundImage: "linear-gradient(90deg, #b4b4b4, #ffffff, #858585, #eeeeee, #b4b4b4)",
@@ -78,16 +78,16 @@ function KeywordsPage() {
         <style>{`@keyframes google-colors-shift { from { background-position: 0% 50%; } to { background-position: 100% 50%; } } @media (prefers-reduced-motion: reduce) { .google-animated-text { animation: none !important; } }`}</style>
         <section className="mt-12 grid gap-6 lg:grid-cols-2" aria-label="Bairros, cidades e palavras-chave">
           <article className="rounded-2xl border border-border bg-card p-6 sm:p-8">
-            <h2 className="text-xl font-bold">Bairros próximos ao Ernesto Geisel</h2>
+            <h2 className="text-xl font-bold">Ernesto Geisel e bairros vizinhos</h2>
             <div className="mt-5 flex flex-wrap gap-2">{(groups[0]?.items ?? []).map(item => <span className={pill} key={item}>{item}</span>)}</div>
           </article>
           <article className="rounded-2xl border border-border bg-card p-6 sm:p-8">
-            <h2 className="text-xl font-bold">Outros bairros e regiões</h2>
+            <h2 className="text-xl font-bold">Outros bairros de João Pessoa</h2>
             <div className="mt-5 flex flex-wrap gap-2">{groups.slice(1).flatMap(group => group.items).map(item => <span className={pill} key={item}>{item}</span>)}</div>
           </article>
           <article className="rounded-2xl border border-border bg-card p-6 sm:p-8">
             <h2 className="text-xl font-bold">Cidades próximas e região</h2>
-            <p className="mt-2 text-sm text-muted-foreground">Cidades de referência na Grande João Pessoa. Consulte disponibilidade de atendimento externo.</p>
+            <p className="mt-2 text-sm text-muted-foreground">Cidades da Grande João Pessoa para pesquisa. Consulte disponibilidade de atendimento externo.</p>
             <div className="mt-5 flex flex-wrap gap-2">{nearbyCities.map(item => <span className={pill} key={item}>{item}</span>)}</div>
           </article>
           <article className="rounded-2xl border border-border bg-card p-6 sm:p-8">
