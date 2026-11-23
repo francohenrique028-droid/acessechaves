@@ -4,9 +4,9 @@ import { KeyRound, Car, Wrench, Search } from "lucide-react";
 const PHONE = "5583991094553";
 const WA = "https://wa.me/" + PHONE + "?text=" + encodeURIComponent("Olá! Encontrei a Acesse Chaves pelo Google e gostaria de consultar um serviço de chaveiro em João Pessoa.");
 const groups = [
-  { title: "Ernesto Geisel e bairros vizinhos", items: ["Ernesto Geisel", "João Paulo II", "Cristo Redentor", "Água Fria", "José Américo", "Cuiá", "Gramame"] },
-  { title: "Zona Sul e bairros próximos", items: ["Grotão", "Funcionários", "Costa e Silva", "Ernani Sátiro", "Esplanada", "Cidade dos Colibris", "Mangabeira", "Valentina de Figueiredo", "Planalto da Boa Esperança", "Paratibe", "Muçumagro", "Colinas do Sul", "Mumbaba", "Distrito Industrial", "Jardim Veneza", "Bairro das Indústrias", "Bancários", "Jardim Cidade Universitária", "Jardim São Paulo", "Anatólia", "Portal do Sol", "Altiplano Cabo Branco"] },
-  { title: "Centro, Zona Norte e outros bairros de João Pessoa", items: ["Centro", "Varadouro", "Trincheiras", "Jaguaribe", "Cruz das Armas", "Oitizeiro", "Torre", "Tambauzinho", "Expedicionários", "Miramar", "Pedro Gondim", "Estados", "Bairro dos Ipês", "Mandacaru", "Alto do Céu", "Treze de Maio", "Padre Zé", "Roger", "Tambiá", "Ilha do Bispo", "Alto do Mateus", "São José", "Brisamar", "João Agripino", "Jardim Oceania", "Aeroclube", "Bessa", "Manaíra", "Tambaú", "Cabo Branco", "Castelo Branco", "Penha", "Ponta do Seixas", "Barra de Gramame", "Jardim Luna", "Jardim das Acácias", "Bairro dos Novais", "Cuiá", "Gramame"] },
+  { title: "Ernesto Geisel e bairros próximos", items: ["Ernesto Geisel", "João Paulo II", "Cristo Redentor", "Água Fria", "José Américo", "Cuiá", "Gramame", "Grotão", "Funcionários", "Costa e Silva", "Ernani Sátiro", "Esplanada", "Cidade dos Colibris", "Colinas do Sul", "Planalto da Boa Esperança", "Mangabeira", "Valentina de Figueiredo", "Bancários", "Jardim Cidade Universitária", "Jardim São Paulo"] },
+  { title: "Zona Sul e outras localidades", items: ["Paratibe", "Muçumagro", "Mumbaba", "Distrito Industrial", "Jardim Veneza", "Bairro das Indústrias", "Anatólia", "Portal do Sol", "Altiplano Cabo Branco", "Barra de Gramame", "Penha", "Ponta do Seixas", "Castelo Branco", "Conjunto dos Bancários", "Mangabeira I", "Mangabeira II", "Mangabeira III", "Mangabeira IV", "Mangabeira V", "Mangabeira VI", "Mangabeira VII", "Mangabeira VIII", "Valentina", "Nova Mangabeira"] },
+  { title: "Centro, Zona Norte e demais bairros de João Pessoa", items: ["Centro", "Varadouro", "Trincheiras", "Jaguaribe", "Cruz das Armas", "Oitizeiro", "Torre", "Tambauzinho", "Expedicionários", "Miramar", "Pedro Gondim", "Estados", "Bairro dos Ipês", "Mandacaru", "Alto do Céu", "Treze de Maio", "Padre Zé", "Roger", "Tambiá", "Ilha do Bispo", "Alto do Mateus", "São José", "Brisamar", "João Agripino", "Jardim Oceania", "Aeroclube", "Bessa", "Manaíra", "Tambaú", "Cabo Branco", "Jardim Luna", "Jardim das Acácias", "Bairro dos Novais", "Jardim Treze de Maio", "Bairro dos Estados", "Jardim Planalto", "Alto do Céu", "Bairro São José"] },
 ];
 const cities = ["João Pessoa", "Santa Rita", "Cabedelo", "Conde"];
 const categories = [
@@ -77,7 +77,7 @@ function KeywordsPage() {
         <Link to="/" className="text-sm font-semibold text-primary hover:underline">← Voltar ao Acesse Chaves</Link>
         <p className="mt-12 text-xs font-semibold uppercase tracking-[0.2em] text-primary">Planejamento de palavras-chave</p>
         <h1 className="mt-3 text-3xl font-extrabold tracking-tight sm:text-5xl">Palavras-chave de chaveiro em João Pessoa, Santa Rita, Cabedelo e Conde</h1>
-        <p className="mt-5 max-w-3xl text-muted-foreground">Termos de pesquisa para bairros de João Pessoa e para as cidades de Santa Rita, Cabedelo e Conde. A lista é voltada a SEO; confirme com a empresa a disponibilidade de atendimento em cada localidade.</p>
+        <p className="mt-5 max-w-3xl text-muted-foreground">Palavras-chave para Ernesto Geisel, bairros de João Pessoa e cidades de Santa Rita, Cabedelo e Conde. As regiões listadas são referências de busca; confirme a disponibilidade de atendimento com a empresa.</p>
         <div className="mb-3 mt-4 flex items-center gap-1.5">
           <span className="google-animated-text bg-clip-text text-sm font-bold tracking-tight text-transparent sm:text-base" style={{
             backgroundImage: "linear-gradient(90deg, #b4b4b4, #ffffff, #858585, #eeeeee, #b4b4b4)",
@@ -90,7 +90,7 @@ function KeywordsPage() {
         <a href={WA} target="_blank" rel="noopener noreferrer" className="mt-7 inline-flex rounded-full bg-primary px-6 py-3 font-bold text-primary-foreground">Solicitar orçamento pelo WhatsApp</a>
         <section className="mt-12 grid gap-6 lg:grid-cols-2" aria-label="Bairros, cidades e palavras-chave">
           <article className="rounded-2xl border border-border bg-card p-6 sm:p-8">
-            <h2 className="text-xl font-bold">Ernesto Geisel e bairros vizinhos</h2>
+            <h2 className="text-xl font-bold">Ernesto Geisel e bairros próximos</h2>
             <div className="mt-5 flex flex-wrap gap-2">{(groups[0]?.items ?? []).map(item => <span className={pill} key={item}>{item}</span>)}</div>
           </article>
           <article className="rounded-2xl border border-border bg-card p-6 sm:p-8">
